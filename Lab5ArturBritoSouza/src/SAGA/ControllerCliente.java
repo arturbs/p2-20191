@@ -1,6 +1,8 @@
 package SAGA;
 
-import java.util.HashMap;
+import java.awt.*;
+import java.util.*;
+import java.util.List;
 
 /**
  * Criado para controlar a classe Cliente.
@@ -82,14 +84,14 @@ public class ControllerCliente {
     public String listaClientes (){
         String saida = "";
 
-        for (int i = 0; i < this.clientes.size() - 1; i++){
-            saida += this.clientes.get(i).toString() + " | ";
-        }
-        for (int i = this.clientes.size(); i < this.clientes.size(); i++){
-            saida += this.clientes.get(i).toString();
+        List<Cliente> clienteList = new ArrayList<>(this.clientes.values());
+        Collections.sort(clienteList);
+
+        for (Cliente cliente: clienteList) {
+            saida += cliente.toString() + " | ";
         }
 
-        return saida;
+        return saida.substring(0, saida.length() - 3);
     }
 
     /**

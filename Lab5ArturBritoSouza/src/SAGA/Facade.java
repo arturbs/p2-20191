@@ -53,16 +53,16 @@ public class Facade {
 		return this.fornecedores.listarFornecedores();
 	}
 	
-	public String editaFornecedor (String nome, String informacao, String alteracao){
-		return this.fornecedores.editaFornecedor(nome, informacao, alteracao);
+	public String editaFornecedor (String nome, String atributo, String novoValor){
+		return this.fornecedores.editaFornecedor(nome, atributo, novoValor);
 	}
 	
 	public String removeFornecedor(String nome) {
 		return this.fornecedores.removeFornecedor(nome);
 	}
 	
-	public IdentificadorProduto adicionaProduto(String nomeProduto, String descricao, double preco, String nomeFornecedor) {
-		return this.fornecedores.cadastraProduto(nomeProduto, descricao, preco, nomeFornecedor);
+	public  void adicionaProduto(String nomeFornecedor, String nomeProduto, String descricao, double preco) {
+		this.fornecedores.cadastraProduto(nomeFornecedor, nomeProduto, descricao, preco);
 	}
 	
 	public String exibeProduto  (String nomeProduto, String descricao, String nomeFornecedor) {
@@ -73,13 +73,18 @@ public class Facade {
 		return this.fornecedores.listaProdutosFornecedor(nome);
 	}
 	
-	public String editaProduto(String nomeProduto, String descricao, double novoPreco, String nomeFornecedor) {
-		return this.fornecedores.editaProduto(nomeProduto, descricao, novoPreco, nomeFornecedor);
+	public String editaProduto(String nomeProduto, String descricao, String nomeFornecedor, double novoPreco) {
+		return this.fornecedores.editaProduto(nomeProduto, descricao, nomeFornecedor, novoPreco);
 	}
 	
 	public String removeProduto (String nomeProduto, String descricao, String nomeFornecedor) {
 		return this.fornecedores.removeProduto(nomeProduto, descricao, nomeFornecedor);
 	}
+
+	//public String adicionaCombo(String nomeFornecedor, nomeCombo, descricaoCombo, fator, nomeProduto1, nomeProduto2){
+	//	return this.fornecedores.cadastraCombo(nomeFornecedor, nomeCombo, descricaoCombo, fator, nomeProduto1, nomeProduto2);
+
+	//}
 		
 }
 	

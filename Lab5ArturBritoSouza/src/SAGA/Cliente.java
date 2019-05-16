@@ -8,7 +8,7 @@ import java.util.Objects;
  *
  * @author Artur Brito Souza - UFCG 
  */
-public class Cliente {
+public class Cliente implements Comparable<Cliente> {
 
 	/**
      * Representacao do cpf do Cliente (Identificador Unico)
@@ -130,6 +130,14 @@ public class Cliente {
     }
 
     /**
+     * Criado para retornar o nome do Cliente
+     * @return String com o nome do Cliente.
+     */
+    public String getNome() {
+        return nome;
+    }
+
+    /**
      * Representacao Textual do Cliente
      * @return String no formato "nome - localizacao - email"
      */
@@ -138,5 +146,8 @@ public class Cliente {
         return   nome + " - " +  localizacao + " - " + email;
     }
 
-
+    @Override
+    public int compareTo(Cliente o) {
+       return this.nome.compareTo(o.getNome());
+    }
 }

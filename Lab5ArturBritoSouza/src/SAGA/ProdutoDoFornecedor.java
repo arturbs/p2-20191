@@ -3,34 +3,34 @@ import java.util.Objects;
 
 /**
  * Classe criada para Representar um Produto do Fornecedor.
- * Um Produto do Fornecedor é representado por um Nome, descrição e preço. O mesmo é
- * identificado unicamente pelo seu id, que é gerado a partir do seu nome e sua descrição.
+ * Um Produto do Fornecedor e representado por um Nome, descricao e preco. O mesmo e
+ * identificado unicamente pelo seu id, que e gerado a partir do seu nome e sua descricao.
  *
  * @author Artur Brito Souza - UFCG 
  */
-public class ProdutoDoFornecedor {
+public class ProdutoDoFornecedor implements Comparable<ProdutoDoFornecedor>{
 
 	/**
-     * Representação do Nome do Produto do Fornecedor 
+     * Representacao do Nome do Produto do Fornecedor
      */
     private String nome;
     
     /**
-     * Representação do preço do Produto do Fornecedor 
+     * Representacao do preco do Produto do Fornecedor
      */
     private double preco;
     
     /**
-     * Representação da descrição do Produto do Fornecedor 
+     * Representacao da descricao do Produto do Fornecedor
      */
     private String descricao;
 
     /**
      * Constroi um Produto do Fornecedor
      *
-     * @param nome Representação do nome do Produto do Fornecedor
-     * @param descricao Representação da descrição do Produto do Fornecedor
-     * @param preco Representação do preço do Produto do Fornecedor
+     * @param nome Representacao do nome do Produto do Fornecedor
+     * @param descricao Representacao da descricao do Produto do Fornecedor
+     * @param preco Representacao do preco do Produto do Fornecedor
      */
     public ProdutoDoFornecedor(String nome, String descricao, double preco) {
         this.nome = nome;
@@ -57,7 +57,7 @@ public class ProdutoDoFornecedor {
 
     /**
      * Criado para alterar o atributo preco do Produto do Fornecedor
-     * @param String com o novo preço do Produto do Fornecedor
+     * @param String com o novo preï¿½o do Produto do Fornecedor
      */
     public void setPreco(double preco) {
         this.preco = preco;
@@ -84,11 +84,16 @@ public class ProdutoDoFornecedor {
     }
 
     /**
-     * Representação Textual do Produto do Fornecedor
-     * @return String no formato "nome - descriçao - R$preço"
+     * Representacao Textual do Produto do Fornecedor
+     * @return String no formato "nome - descricao - R$preco"
      */
     @Override
     public String toString() {
-        return nome + " - " + descricao + " - R$" + preco;
+        return nome + " - " + descricao + " - R$" + String.format("%.2f", preco);
+    }
+
+    @Override
+    public int compareTo(ProdutoDoFornecedor o) {
+        return this.nome.compareTo(o.getNome());
     }
 }

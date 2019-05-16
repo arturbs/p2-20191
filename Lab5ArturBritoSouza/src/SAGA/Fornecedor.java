@@ -1,7 +1,6 @@
 package SAGA;
 
-import java.util.HashMap;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Classe criada para Representar um Fornecedor
@@ -10,7 +9,7 @@ import java.util.Objects;
  *
  * @author Artur Brito Souza - UFCG 
  */
-public class Fornecedor {
+public class Fornecedor implements Comparable<Fornecedor>{
 
 	/**
      * Representacao do Nome do Fornecedor (Identificador Unico)
@@ -32,6 +31,12 @@ public class Fornecedor {
      * uma identifcacao unica com base no nome e descricao do produto.
      */
     private HashMap <IdentificadorProduto, ProdutoDoFornecedor> listaDeProdutos;
+
+	/**
+	 * Representacao dos combos de produtos cadastrados pelo Fornecedor. Possui como chave o IdentificadorCombo que e uma classe que cria
+	 * uma identifcacao unica com base no nome e descricao do produto.
+	 */
+    //private HashMap <IdentificadorCombo, ComboDoFornecedor> listaDeCombos;
 
     /**
      * Constroi um Fornecedor
@@ -133,18 +138,18 @@ public class Fornecedor {
      */
     public IdentificadorProduto cadastraProduto(String nome, String descricao, double preco){
     	IdentificadorProduto id = new IdentificadorProduto(nome.toLowerCase(), descricao.toLowerCase());
-    	
-    	if (nome.trim().equals("") || descricao.trim().equals("")) {
-    		throw new IllegalArgumentException("Erro no cadastro do produto: nome e/ou descri��o n�o pode ser vazio");
-    	}
-    	if (nome == null || descricao == null ) {
-    		throw new NullPointerException("Erro no cadastro do produto: nome e/ou descri��o n�o pode ser nulo");
-    	 }
-    	if (preco < 0) {
-    		throw new IllegalArgumentException("Erro no cadastro do produto: pre�o n�o pode ser negativo");
-    	}
+
+		if (nome.trim().equals("") || nome == null) {
+			throw new IllegalArgumentException("Erro no cadastro de produto: nome nao pode ser vazio ou nulo.");
+		}
+		if (descricao.trim().equals("") || descricao == null ) {
+			throw new IllegalArgumentException("Erro no cadastro de produto: descricao nao pode ser vazia ou nula.");
+		}
+		if (preco < 0) {
+			throw new IllegalArgumentException("Erro no cadastro de produto: preco invalido.");
+		}
         if (listaDeProdutos.containsKey(id)){
-            throw new IllegalArgumentException("Produto ja cadastrado");
+            throw new IllegalArgumentException("Erro no cadastro de produto: produto ja existe.");
         }
 
         ProdutoDoFornecedor p = new ProdutoDoFornecedor(nome, descricao, preco);
@@ -162,18 +167,18 @@ public class Fornecedor {
     public String encontraProduto (String nome, String descricao) {
     	String saida = "";
     	IdentificadorProduto id = new IdentificadorProduto(nome.toLowerCase(), descricao.toLowerCase());
-    	
-    	if (nome.trim().equals("") || descricao.trim().equals("")) {
-    		throw new IllegalArgumentException("Erro na exibi��o do produto: nome e/ou descri��o n�o pode ser vazio");
-    	}
-    	if (nome == null || descricao == null ) {
-    		throw new NullPointerException("Erro na exibi��o do produto: nome e/ou descri��o n�o pode ser nulo");
-    	}
+
+		if (nome.trim().equals("") || nome == null) {
+			throw new IllegalArgumentException("Erro no cadastro de produto: nome nao pode ser vazio ou nulo.");
+		}
+		if (descricao.trim().equals("") || descricao == null ) {
+			throw new IllegalArgumentException("Erro no cadastro de produto: descricao nao pode ser vazia ou nula.");
+		}
     	if (this.listaDeProdutos.containsKey(id)) {
     		saida = this.listaDeProdutos.get(id).toString();
     	}
     	else {
-            saida = "Produto nao cadastrado";
+			throw new IllegalArgumentException("Erro na exibicao de produto: produto nao existe.");
         }	
     	return saida;
     }
@@ -185,15 +190,19 @@ public class Fornecedor {
      * @return uma String com a Representação de uma lista com todos os produtos do fornecedor especifico.
      */
     public String listaProdutosFornecedor (String nome) {
-    	String saida = "";
-    	
-    	for (int i = 0; i < this.listaDeProdutos.size() - 1; i++){
-            saida += this.listaDeProdutos.get(i).toString() + " | ";
-        }
-        for (int i = this.listaDeProdutos.size(); i < this.listaDeProdutos.size(); i++){
-            saida += this.listaDeProdutos.get(i).toString();
-        }
-    	return saida;
+		String saida = "";
+
+
+		List<ProdutoDoFornecedor> produtoDoFornecedorList = new ArrayList<>(this.listaDeProdutos.values());
+		Collections.sort(produtoDoFornecedorList);
+
+		for (ProdutoDoFornecedor produtoDoFornecedor : produtoDoFornecedorList){
+
+			saida += produtoDoFornecedor.toString() + " | ";
+
+		}
+
+		return saida.substring(0, saida.length() - 3);
     }
     
     
@@ -242,21 +251,25 @@ public class Fornecedor {
     public String removeProduto (String nome, String descricao) {
     	String saida = "";
     	IdentificadorProduto id = new IdentificadorProduto(nome.toLowerCase(), descricao.toLowerCase());
-    	
-    	if (nome.trim().equals("") || descricao.trim().equals("")) {
-    		throw new IllegalArgumentException("Erro na remo��o do produto: nome e/ou descri��o n�o pode ser vazio");
-    	}
-    	if (nome == null || descricao == null ) {
-    		throw new NullPointerException("Erro na remo��o do produto: nome e/ou descri��o n�o pode ser nulo");
-    	}
-    	
+
+		if (nome == null || nome.trim().equals("")){
+			throw new NullPointerException("Erro na remocao de produto: nome nao pode ser vazio ou nulo.");
+		}
+		if (descricao == null || descricao.trim().equals("")){
+			throw new NullPointerException("Erro na remocao de produto: descricao nao pode ser vazia ou nula.");
+		}
+		if (!this.listaDeProdutos.containsKey(id)){
+			throw new IllegalArgumentException("Erro na remocao de produto: produto nao existe.");
+		}
         if (this.listaDeProdutos.containsKey(id)){
         	this.listaDeProdutos.remove(id);
-            saida = "Produto removido removido";
         }
         return  saida;
     }
 
-    
 
+	@Override
+	public int compareTo(Fornecedor o) {
+		return this.nome.compareTo(o.getNome());
+	}
 }

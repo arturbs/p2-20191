@@ -1,6 +1,11 @@
 package SAGA;
 
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Criado para controlar a classe Fornecedor
@@ -76,50 +81,51 @@ public class ControllerFornecedor {
     }
 
     /**
-     * Criado para retornar a representa��o de todos os fornecedores
+     * Criado para retornar a representacao de todos os fornecedores
      *
      * @return String com nome de todos os fornecedores cadastrados
      */
     public  String listarFornecedores(){
         String saida = "";
 
-        for (int i = 0; i < this.fornecedores.size() - 1; i++){
-            saida += fornecedores.get(i).toString() + " | ";
-        }
-        for (int i = this.fornecedores.size(); i < this.fornecedores.size(); i++){
-            saida += this.fornecedores.get(i).toString();
-        }
 
-        return saida;
+		List <Fornecedor> fornecedorList = new ArrayList<>(this.fornecedores.values());
+		Collections.sort(fornecedorList);
+
+		for (Fornecedor fornecedor : fornecedorList){
+
+			saida += fornecedor.toString() + " | ";
+
+		}
+
+		return saida.substring(0, saida.length() - 3);
     }
 
     /**
      * Criado para editar algum atributo do fornecedor
      *
-     * @param nome que ir� identificar o cliente
-     * @param informacao qual o atributo que ser� modificado
-     * @param alteracao novo valor o qual o atributo indicado ser� substitituido.
+     * @param nome que ira identificar o cliente
+     * @param informacao qual o atributo que sera modificado
+     * @param alteracao novo valor o qual o atributo indicado sera substitituido.
      * @return String com a frase Altercao concluida
      */
     public String editaFornecedor (String nome, String informacao, String alteracao){
 
-    	if (informacao == null){
-    		throw new NullPointerException("Erro na altera��o do fornecedor: atributo desejado n�o pode ser nulo");
+    	if (informacao.trim().equals("nome")){
+			throw new IllegalArgumentException("Erro na edicao do fornecedor: nome nao pode ser editado.");
+		}
+    	if (informacao == null || informacao.trim().equals("")){
+			throw new IllegalArgumentException("Erro na edicao do fornecedor: atributo nao pode ser vazio ou nulo.");
     	}
-    	if (informacao.trim().equals("")) {
-    		throw new IllegalArgumentException("Erro na altera��o do fornecedor: atributo desejado n�o pode ser vazio");
+
+    	if (!informacao.toLowerCase().trim().equals("email") && !informacao.toLowerCase().trim().equals("telefone") && !informacao.toLowerCase().trim().equals("nome")) {
+    		throw new IllegalArgumentException("Erro na edicao do fornecedor: atributo nao existe.");
     	}
-    	if (!informacao.toLowerCase().trim().equals("email") || !informacao.toLowerCase().trim().equals("telefone")) {
-    		throw new IllegalArgumentException("Erro na altera��o do fornecedor: atributo n�o existente");
-    	}
-    	if (alteracao == null){
-    		throw new NullPointerException("Erro na altera��o do fornecedor: novo valor desejado n�o pode ser nulo");
-    	}
-    	if (alteracao.trim().equals("")) {
-    		throw new IllegalArgumentException("Erro na altera��o do fornecedor: novo valor desejado n�o pode ser vazio");
+    	if (alteracao == null || alteracao.trim().equals("")){
+			throw new IllegalArgumentException("Erro na edicao do fornecedor: novo valor nao pode ser vazio ou nulo.");
     	}
     	if (!this.fornecedores.containsKey(nome)) {
-    		throw new IllegalArgumentException("Erro na altera��o do fornecedor: fornecedor n�o cadastrado");
+    		throw new IllegalArgumentException("Erro na alteracao do fornecedor: fornecedor nao cadastrado");
     	}
         if (this.fornecedores.containsKey(nome)){
             if (informacao.toLowerCase().equals("email")){
@@ -135,11 +141,15 @@ public class ControllerFornecedor {
     /**
      * Criado para remove algum fornecedor.
      *
-     * @param nome String com nome do fornecedor que ser� removido.
+     * @param nome String com nome do fornecedor que sera removido.
      * @return String com a frase fornecedor removido.
      */
     public String removeFornecedor(String nome){
         String saida = "";
+
+        if (nome.trim().equals("") || nome == null ){
+			throw new IllegalArgumentException("Erro na remocao do fornecedor: nome do fornecedor nao pode ser vazio.");
+		}
 
         if (this.fornecedores.containsKey(nome)){
         	this.fornecedores.remove(nome);
@@ -157,46 +167,59 @@ public class ControllerFornecedor {
      * @param nomeFornecedor String com o nome do fornecedor
      * @return boolean true se o cadastro obter sucesso.
      */
-    public IdentificadorProduto cadastraProduto(String nomeProduto, String descricao, double preco, String nomeFornecedor){
-    	
-    	if (nomeProduto.trim().equals("") || descricao.trim().equals("")) {
-    		throw new IllegalArgumentException("Erro no cadastro do produto: nome e/ou descri��o n�o pode ser vazio");
-    	}
-    	if (nomeProduto == null || descricao == null ) {
-    		throw new NullPointerException("Erro no cadastro do produto: nome e/ou descri��o n�o pode ser nulo");
-    	 }
-    	if (preco < 0) {
-    		throw new IllegalArgumentException("Erro no cadastro do produto: pre�o n�o pode ser negativo");
-    	}
-        return this.fornecedores.get(nomeFornecedor).cadastraProduto(nomeProduto, descricao, preco);
+    public void cadastraProduto(String nomeFornecedor, String nomeProduto, String descricao, double preco){
+
+		if (nomeProduto.trim().equals("") || nomeProduto == null) {
+			throw new IllegalArgumentException("Erro no cadastro de produto: nome nao pode ser vazio ou nulo.");
+		}
+		if (descricao.trim().equals("") || descricao == null ) {
+			throw new IllegalArgumentException("Erro no cadastro de produto: descricao nao pode ser vazia ou nula.");
+		}
+		if (nomeFornecedor.trim().equals("") || nomeFornecedor == null) {
+			throw new IllegalArgumentException("Erro no cadastro de produto: fornecedor nao pode ser vazio ou nulo.");
+		}
+		if (preco < 0) {
+			throw new IllegalArgumentException("Erro no cadastro de produto: preco invalido.");
+		}
+		if (!fornecedores.containsKey(nomeFornecedor)){
+			throw new IllegalArgumentException("Erro no cadastro de produto: fornecedor nao existe.");
+		}
+
+		fornecedores.get(nomeFornecedor).cadastraProduto(nomeProduto, descricao, preco);
     }
     
     
     /**
-     * Criado para retornar a representa��o de um produto especifico
+     * Criado para retornar a representacao de um produto especifico
      *
      * @param nomeProduto String com o nome do produto desejado
      * @param descricao String com descricao do produto desejado
      * @param nomeFornecedor String com o nome do fornecedor ao qual o produto desejado pertence.
-     * @return uma String com a representa��o de um produto
+     * @return uma String com a representacao de um produto
      */
     public String encontraProduto (String nomeProduto, String descricao, String nomeFornecedor) {
-    	
-    	if (nomeProduto.trim().equals("") || descricao.trim().equals("") || nomeFornecedor.trim().equals("")) {
-    		throw new IllegalArgumentException("Erro na remo��o do produto: nome, descri��o e/ou fornecedor n�o pode ser vazio");
-    	}
-    	if (nomeProduto == null || descricao == null || nomeFornecedor == null ) {
-    		throw new NullPointerException("Erro na remo��o do produto: nome, descri��o e/ou fornecedor n�o pode ser nulo");
-    	}
+
+		if (nomeProduto.trim().equals("") || nomeProduto == null) {
+			throw new IllegalArgumentException("Erro na exibicao de produto: nome nao pode ser vazio ou nulo.");
+		}
+		if (descricao.trim().equals("") || descricao == null ) {
+			throw new IllegalArgumentException("Erro na exibicao de produto: descricao nao pode ser vazia ou nula.");
+		}
+		if (nomeFornecedor.trim().equals("") || nomeFornecedor == null) {
+			throw new IllegalArgumentException("Erro na exibicao de produto: fornecedor nao pode ser vazio ou nulo.");
+		}
+		if (!fornecedores.containsKey(nomeFornecedor)){
+			throw new IllegalArgumentException("Erro na exibicao de produto: fornecedor nao existe.");
+		}
     	
     	return this.fornecedores.get(nomeFornecedor).encontraProduto(nomeProduto, descricao);
     }
     
     /**
-     * Criado para retornar a representa��o dos produtos de um fornecedor especifico.
+     * Criado para retornar a representacao dos produtos de um fornecedor especifico.
      *
      * @param nome String com nome do fornecedor desejado
-     * @return String com representa��o dos produtos do fornecedor desejado.
+     * @return String com representacao dos produtos do fornecedor desejado.
      */
     public String listaProdutosFornecedor (String nome) {
     	
@@ -211,16 +234,30 @@ public class ControllerFornecedor {
     }
  
     /**
-     * Criado para retornar a representa��o dos produtos de um fornecedor especifico.
-     * obs: N�o implementada.(implementada errada)
+     * Criado para retornar a representacao dos produtos de um fornecedor especifico.
+     * obs: Nao ordenada
      *
 
-     * @return String com representa��o dos produtos de todos os fornecedores cadastrados.
+     * @return String com representacao dos produtos de todos os fornecedores cadastrados.
      */
     public String listarProdutosDeTodosOsFornecedores () {
-    	
-    	String saida = "";
-    	
+
+		//String saida = "";
+
+
+		//List<ProdutoDoFornecedor> produtoDoFornecedorList = new ArrayList<>(this.listaDeProdutos.values());
+		//Collections.sort(produtoDoFornecedorList);
+
+		//for (ProdutoDoFornecedor produtoDoFornecedor : produtoDoFornecedorList){
+
+		//	saida += produtoDoFornecedor.toString() + " | ";
+
+		//}
+
+		//return saida.substring(0, saida.length() - 3);
+
+		String saida = "";
+
     		for (int i = 0; i < this.fornecedores.size() - 1; i++){
     			saida += this.fornecedores.get(i).toString() + " | ";
     		}
@@ -233,37 +270,31 @@ public class ControllerFornecedor {
     /**
      * Criado para editar algum atributo do Cliente.
      *
-     * @param nome String com nome do produto que ir� formar o id.
-     * @param descricao String com a descricao do produto que ir� formar o id.
+     * @param nome String com nome do produto que ira formar o id.
+     * @param descricao String com a descricao do produto que ira formar o id.
      * @param novoPreco double que sera o novo valor do preco do produto
      * @param nomeFornecedor String com nome do fornecedor ao qual pertecence o produto que deseja-se alterar.
      * @return String com a frase Altercao concluida
      */
     
-    public String editaProduto(String nomeProduto, String descricao, double novoPreco, String nomeFornecedor) {
+    public String editaProduto(String nomeProduto, String descricao, String nomeFornecedor, double novoPreco) {
     	
-    	if (nomeProduto == null){
-    		throw new NullPointerException("Erro na altera��o do produto: nome do produto n�o pode ser nulo");
+    	if (nomeProduto == null || nomeProduto.trim().equals("")){
+    		throw new NullPointerException("Erro na edicao de produto: nome nao pode ser vazio ou nulo.");
     	}
-    	if (nomeProduto.trim().equals("")) {
-    		throw new IllegalArgumentException("Erro na altera��o do produto: nome do produto n�o pode ser vazio");
-    	}
-    	if (descricao == null){
-    		throw new NullPointerException("Erro na altera��o do produto: descri��o do produto n�o pode ser nulo");
-    	}
-    	if (descricao.trim().equals("")) {
-    		throw new IllegalArgumentException("Erro na altera��o do produto: descri��o do produto n�o pode ser vazio");
+    	if (descricao == null || descricao.trim().equals("")){
+    		throw new NullPointerException("Erro na edicao de produto: descricao nao pode ser vazia ou nula.");
     	}
     	if (novoPreco < 0) {
-    		throw new IllegalArgumentException("Erro na altera��o do produto: pre�o n�o pode ser menor que 0");
+    		throw new IllegalArgumentException("Erro na edicao de produto: preco invalido.");
     	}
-    	if (nomeFornecedor == null){
-    		throw new NullPointerException("Erro na altera��o do produto: nome do fornecedor n�o pode ser nulo");
+		if (nomeFornecedor == null || nomeFornecedor.trim().equals("")){
+			throw new NullPointerException("Erro na edicao de produto: fornecedor nao pode ser vazio ou nulo.");
+		}
+    	if (!fornecedores.containsKey(nomeFornecedor)){
+    		throw new NullPointerException("Erro na edicao de produto: fornecedor nao existe.");
     	}
-    	if (nomeFornecedor.trim().equals("")) {
-    		throw new IllegalArgumentException("Erro na altera��o do produto: nome do fornecedor n�o pode ser vazio");
-    	}
-    	
+
     	return this.fornecedores.get(nomeFornecedor).editaProduto(nomeProduto, descricao, novoPreco);
     	
     }
@@ -271,20 +302,26 @@ public class ControllerFornecedor {
     /**
      * Criado para remove algum produto
      *
-     * @param nomeProduto String com o nome do produto que ser� removido.
-     * @param descricao String com descricao do produto que ser� removido.
+     * @param nomeProduto String com o nome do produto que sera removido.
+     * @param descricao String com descricao do produto que sera removido.
      * @param nomeFornecedor String com o nome do fornecedor ao qual o produto pertence.
      * @return String com a frase cliente removido.
      */
     public String removeProduto (String nomeProduto, String descricao, String nomeFornecedor) {
-    	
-    	if (nomeProduto.trim().equals("") || descricao.trim().equals("") || nomeFornecedor.trim().equals("")) {
-    		throw new IllegalArgumentException("Erro na remo��o do produto: nome, descri��o e/ou fornecedor n�o pode ser vazio");
-    	}
-    	if (nomeProduto == null || descricao == null || nomeFornecedor == null ) {
-    		throw new NullPointerException("Erro na remo��o do produto: nome, descri��o e/ou fornecedor n�o pode ser nulo");
-    	}
-    	
+
+		if (nomeProduto == null || nomeProduto.trim().equals("")){
+			throw new NullPointerException("Erro na remocao de produto: nome nao pode ser vazio ou nulo.");
+		}
+		if (descricao == null || descricao.trim().equals("")){
+			throw new NullPointerException("Erro na remocao de produto: descricao nao pode ser vazia ou nula.");
+		}
+		if (nomeFornecedor == null || nomeFornecedor.trim().equals("")){
+			throw new NullPointerException("Erro na remocao de produto: fornecedor nao pode ser vazio ou nulo.");
+		}
+		if (!fornecedores.containsKey(nomeFornecedor)){
+			throw new NullPointerException("Erro na remocao de produto: fornecedor nao existe.");
+		}
+
     	return this.fornecedores.get(nomeFornecedor).removeProduto(nomeProduto, descricao);
     }
 }
