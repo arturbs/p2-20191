@@ -10,7 +10,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="SAGA.ControllerCliente" project="Lab5ArturBritoSouza" 
+  <class id="2" language="java" name="SAGA.Cliente.ControllerCliente" project="Lab5ArturBritoSouza"
     file="/Lab5ArturBritoSouza/src/SAGA/ControllerCliente.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="171" width="261" x="3376" y="3243"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
@@ -64,7 +64,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="SAGA.IdentificadorProduto" project="Lab5ArturBritoSouza" 
+  <class id="8" language="java" name="SAGA.IdentificadorProdutoECombo" project="Lab5ArturBritoSouza"
     file="/Lab5ArturBritoSouza/src/SAGA/IdentificadorProduto.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="153" width="189" x="3783" y="3971"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
@@ -91,7 +91,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="SAGA.Cliente" project="Lab5ArturBritoSouza" 
+  <class id="11" language="java" name="SAGA.Cliente.Cliente" project="Lab5ArturBritoSouza"
     file="/Lab5ArturBritoSouza/src/SAGA/Cliente.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="279" width="187" x="3187" y="3598"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
@@ -100,7 +100,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="SAGA.ControllerFornecedor" project="Lab5ArturBritoSouza" 
+  <class id="12" language="java" name="SAGA.Fornecedor.ControllerFornecedor" project="Lab5ArturBritoSouza"
     file="/Lab5ArturBritoSouza/src/SAGA/ControllerFornecedor.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="279" width="280" x="3677" y="3243"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
@@ -118,7 +118,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="SAGA.Fornecedor" project="Lab5ArturBritoSouza" 
+  <class id="14" language="java" name="SAGA.Fornecedor.Fornecedor" project="Lab5ArturBritoSouza"
     file="/Lab5ArturBritoSouza/src/SAGA/Fornecedor.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="333" width="249" x="3997" y="3598"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 

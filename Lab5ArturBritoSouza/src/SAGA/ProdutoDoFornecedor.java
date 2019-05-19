@@ -92,6 +92,9 @@ public class ProdutoDoFornecedor implements Comparable<ProdutoDoFornecedor>{
         return nome + " - " + descricao + " - R$" + String.format("%.2f", preco);
     }
 
+    /**
+     * Comparador baseado no nome do Produto
+     */
     @Override
     public int compareTo(ProdutoDoFornecedor o) {
         return this.nome.compareTo(o.getNome());

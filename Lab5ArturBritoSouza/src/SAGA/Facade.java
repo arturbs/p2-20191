@@ -1,7 +1,7 @@
 package SAGA;
 
-import SAGA.ControllerCliente;
-import SAGA.ControllerFornecedor;
+import SAGA.Cliente.ControllerCliente;
+import SAGA.Fornecedor.ControllerFornecedor;
 import easyaccept.EasyAccept;
 
 public class Facade {
@@ -16,11 +16,14 @@ public class Facade {
 	
 	public static void main(String[] args) {
 		args = new String[] { "SAGA.Facade", "acceptance_test/use_case_1.txt",
-				"acceptance_test/use_case_2.txt", "acceptance_test/use_case_3.txt",
+				"acceptance_test/use_case_2.txt", "acceptance_test/use_case_3.txt", "acceptance_test/use_case_4.txt",
+				//"acceptance_test/use_case_5.txt",
+				//"acceptance_test/use_case_6.txt",
 				};
 		EasyAccept.main(args);
 	}
-		
+
+	//Cliente
 	public String adicionaCliente(String cpf, String nome, String email, String localizacao){
 		return this.clientes.cadastraCliente(cpf, nome, email, localizacao);
 	}
@@ -29,7 +32,7 @@ public class Facade {
 		return this.clientes.encontraCliente(cpf);
 	}
 	
-	public String listaClientes (){
+	public String exibeClientes (){
 		return this.clientes.listaClientes();
 	}
 	
@@ -40,7 +43,9 @@ public class Facade {
 	public String removeCliente(String cpf){
 		return this.clientes.RemoveClienteDoCadastro(cpf);
 	}
-	
+
+
+	//Fornecedor
 	public String adicionaFornecedor(String nome, String email, String telefone){
 		return this.fornecedores.cadastraFornecedor(nome, email, telefone);
 	}
@@ -49,7 +54,7 @@ public class Facade {
 		return this.fornecedores.encontraFornecedor(nome);
 	}
 	
-	public  String listarFornecedores(){
+	public  String exibeFornecedores(){
 		return this.fornecedores.listarFornecedores();
 	}
 	
@@ -60,7 +65,8 @@ public class Facade {
 	public String removeFornecedor(String nome) {
 		return this.fornecedores.removeFornecedor(nome);
 	}
-	
+
+	//Produto
 	public  void adicionaProduto(String nomeFornecedor, String nomeProduto, String descricao, double preco) {
 		this.fornecedores.cadastraProduto(nomeFornecedor, nomeProduto, descricao, preco);
 	}
@@ -69,8 +75,12 @@ public class Facade {
 		return this.fornecedores.encontraProduto(nomeProduto, descricao, nomeFornecedor);
 	}
 	
-	public String listaProdutosFornecedor (String nome) {
+	public String exibeProdutosFornecedor (String nome) {
 		return this.fornecedores.listaProdutosFornecedor(nome);
+	}
+
+	public String exibeProdutos (){
+		return this.fornecedores.listarProdutosDeTodosOsFornecedores();
 	}
 	
 	public String editaProduto(String nomeProduto, String descricao, String nomeFornecedor, double novoPreco) {
@@ -81,6 +91,7 @@ public class Facade {
 		return this.fornecedores.removeProduto(nomeProduto, descricao, nomeFornecedor);
 	}
 
+	//Combo
 	//public String adicionaCombo(String nomeFornecedor, nomeCombo, descricaoCombo, fator, nomeProduto1, nomeProduto2){
 	//	return this.fornecedores.cadastraCombo(nomeFornecedor, nomeCombo, descricaoCombo, fator, nomeProduto1, nomeProduto2);
 

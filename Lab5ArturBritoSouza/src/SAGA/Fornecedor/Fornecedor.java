@@ -1,4 +1,7 @@
-package SAGA;
+package SAGA.Fornecedor;
+
+import SAGA.IdentificadorProdutoECombo;
+import SAGA.ProdutoDoFornecedor;
 
 import java.util.*;
 
@@ -27,10 +30,10 @@ public class Fornecedor implements Comparable<Fornecedor>{
     private String telefone;
     
     /**
-     * Representacao dos produtos cadastrados pelo Fornecedor. Possui como chave o IdentificadorProduto que e uma classe que cria
+     * Representacao dos produtos cadastrados pelo Fornecedor. Possui como chave o IdentificadorProdutoECombo que e uma classe que cria
      * uma identifcacao unica com base no nome e descricao do produto.
      */
-    private HashMap <IdentificadorProduto, ProdutoDoFornecedor> listaDeProdutos;
+    private HashMap <IdentificadorProdutoECombo, ProdutoDoFornecedor> listaDeProdutos;
 
 	/**
 	 * Representacao dos combos de produtos cadastrados pelo Fornecedor. Possui como chave o IdentificadorCombo que e uma classe que cria
@@ -136,8 +139,8 @@ public class Fornecedor implements Comparable<Fornecedor>{
      * @param preco double com o preco do produto
      * @return boolean true se o cadastro obter sucesso.
      */
-    public IdentificadorProduto cadastraProduto(String nome, String descricao, double preco){
-    	IdentificadorProduto id = new IdentificadorProduto(nome.toLowerCase(), descricao.toLowerCase());
+    public IdentificadorProdutoECombo cadastraProduto(String nome, String descricao, double preco){
+    	IdentificadorProdutoECombo id = new IdentificadorProdutoECombo(nome.toLowerCase(), descricao.toLowerCase());
 
 		if (nome.trim().equals("") || nome == null) {
 			throw new IllegalArgumentException("Erro no cadastro de produto: nome nao pode ser vazio ou nulo.");
@@ -166,13 +169,13 @@ public class Fornecedor implements Comparable<Fornecedor>{
      */
     public String encontraProduto (String nome, String descricao) {
     	String saida = "";
-    	IdentificadorProduto id = new IdentificadorProduto(nome.toLowerCase(), descricao.toLowerCase());
+    	IdentificadorProdutoECombo id = new IdentificadorProdutoECombo(nome.toLowerCase(), descricao.toLowerCase());
 
 		if (nome.trim().equals("") || nome == null) {
-			throw new IllegalArgumentException("Erro no cadastro de produto: nome nao pode ser vazio ou nulo.");
+			throw new IllegalArgumentException("Erro na exibicao de produto: nome nao pode ser vazio ou nulo.");
 		}
 		if (descricao.trim().equals("") || descricao == null ) {
-			throw new IllegalArgumentException("Erro no cadastro de produto: descricao nao pode ser vazia ou nula.");
+			throw new IllegalArgumentException("Erro na exibicao de produto: descricao nao pode ser vazia ou nula.");
 		}
     	if (this.listaDeProdutos.containsKey(id)) {
     		saida = this.listaDeProdutos.get(id).toString();
@@ -189,7 +192,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
      * @param nome - nome o fornecedor
      * @return uma String com a Representação de uma lista com todos os produtos do fornecedor especifico.
      */
-    public String listaProdutosFornecedor (String nome) {
+    public String listaProdutosFornecedor () {
 		String saida = "";
 
 
@@ -198,7 +201,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
 
 		for (ProdutoDoFornecedor produtoDoFornecedor : produtoDoFornecedorList){
 
-			saida += produtoDoFornecedor.toString() + " | ";
+			saida += getNome() + " - " + produtoDoFornecedor.toString() + " | ";
 
 		}
 
@@ -215,7 +218,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
      * @return String com a frase Altercao concluida
      */
     public String editaProduto(String nome, String descricao, double novoPreco) {
-    	IdentificadorProduto id = new IdentificadorProduto(nome.toLowerCase(), descricao.toLowerCase());
+    	IdentificadorProdutoECombo id = new IdentificadorProdutoECombo(nome.toLowerCase(), descricao.toLowerCase());
     	
     	if (nome == null){
     		throw new NullPointerException("Erro na alteração do produto: nome n�o pode ser nulo");
@@ -250,7 +253,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
      */
     public String removeProduto (String nome, String descricao) {
     	String saida = "";
-    	IdentificadorProduto id = new IdentificadorProduto(nome.toLowerCase(), descricao.toLowerCase());
+    	IdentificadorProdutoECombo id = new IdentificadorProdutoECombo(nome.toLowerCase(), descricao.toLowerCase());
 
 		if (nome == null || nome.trim().equals("")){
 			throw new NullPointerException("Erro na remocao de produto: nome nao pode ser vazio ou nulo.");
@@ -267,7 +270,9 @@ public class Fornecedor implements Comparable<Fornecedor>{
         return  saida;
     }
 
-
+	/**
+	 * Comparador baseado no nome do Fornecedor
+	 */
 	@Override
 	public int compareTo(Fornecedor o) {
 		return this.nome.compareTo(o.getNome());

@@ -1,6 +1,4 @@
-package SAGA;
-
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+package SAGA.Fornecedor;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -147,9 +145,13 @@ public class ControllerFornecedor {
     public String removeFornecedor(String nome){
         String saida = "";
 
-        if (nome.trim().equals("") || nome == null ){
+        if (nome == null || nome.trim().equals("") ){
 			throw new IllegalArgumentException("Erro na remocao do fornecedor: nome do fornecedor nao pode ser vazio.");
 		}
+
+        if (!this.fornecedores.containsKey(nome)){
+            throw new IllegalArgumentException("Erro na remocao do fornecedor: fornecedor nao existe.");
+        }
 
         if (this.fornecedores.containsKey(nome)){
         	this.fornecedores.remove(nome);
@@ -199,13 +201,13 @@ public class ControllerFornecedor {
      */
     public String encontraProduto (String nomeProduto, String descricao, String nomeFornecedor) {
 
-		if (nomeProduto.trim().equals("") || nomeProduto == null) {
+		if (nomeProduto == null || nomeProduto.trim().equals("")) {
 			throw new IllegalArgumentException("Erro na exibicao de produto: nome nao pode ser vazio ou nulo.");
 		}
-		if (descricao.trim().equals("") || descricao == null ) {
+		if (descricao == null || descricao.trim().equals("") ) {
 			throw new IllegalArgumentException("Erro na exibicao de produto: descricao nao pode ser vazia ou nula.");
 		}
-		if (nomeFornecedor.trim().equals("") || nomeFornecedor == null) {
+		if (nomeFornecedor == null || nomeFornecedor.trim().equals("")) {
 			throw new IllegalArgumentException("Erro na exibicao de produto: fornecedor nao pode ser vazio ou nulo.");
 		}
 		if (!fornecedores.containsKey(nomeFornecedor)){
@@ -223,18 +225,17 @@ public class ControllerFornecedor {
      */
     public String listaProdutosFornecedor (String nome) {
     	
-    	if (nome.trim().equals("")) {
-    		throw new IllegalArgumentException("Erro na listagem de produtos do fornecedor: nome n�o pode ser vazio");
+    	if (nome == null || nome.trim().equals("")) {
+    		throw new IllegalArgumentException("Erro na exibicao de produto: fornecedor nao pode ser vazio ou nulo.");
     	}
-    	if (nome == null) {
-    		throw new NullPointerException("Erro na listagem de produtos do fornecedor: nome n�o pode ser nulo");
-    	}
-    	
-    	return this.fornecedores.get(nome).listaProdutosFornecedor(nome);
+    	if (!this.fornecedores.containsKey(nome)){
+			throw new IllegalArgumentException("Erro na exibicao de produto: fornecedor nao existe.");
+		}
+    	return this.fornecedores.get(nome).listaProdutosFornecedor();
     }
  
     /**
-     * Criado para retornar a representacao dos produtos de um fornecedor especifico.
+     * Criado para retornar a representacao dos produtos de todos fornecedor especifico.
      * obs: Nao ordenada
      *
 
@@ -242,29 +243,19 @@ public class ControllerFornecedor {
      */
     public String listarProdutosDeTodosOsFornecedores () {
 
-		//String saida = "";
-
-
-		//List<ProdutoDoFornecedor> produtoDoFornecedorList = new ArrayList<>(this.listaDeProdutos.values());
-		//Collections.sort(produtoDoFornecedorList);
-
-		//for (ProdutoDoFornecedor produtoDoFornecedor : produtoDoFornecedorList){
-
-		//	saida += produtoDoFornecedor.toString() + " | ";
-
-		//}
-
-		//return saida.substring(0, saida.length() - 3);
-
 		String saida = "";
 
-    		for (int i = 0; i < this.fornecedores.size() - 1; i++){
-    			saida += this.fornecedores.get(i).toString() + " | ";
-    		}
-    		for (int i = this.fornecedores.size(); i < this.fornecedores.size(); i++){
-    			saida += this.fornecedores.get(i).toString();
-    		}
-    		return saida;
+
+		List<Fornecedor> fornecedorList = new ArrayList<>(this.fornecedores.values());
+		Collections.sort(fornecedorList);
+
+		for (Fornecedor fornecedor : fornecedorList){
+
+			saida +=  fornecedor.listaProdutosFornecedor()+ " | ";
+
+		}
+
+		return saida.substring(0, saida.length() - 3);
     }
     
     /**

@@ -1,4 +1,4 @@
-package SAGA;
+package SAGA.Cliente;
 import java.util.Objects;
 
 /**
@@ -146,6 +146,9 @@ public class Cliente implements Comparable<Cliente> {
         return   nome + " - " +  localizacao + " - " + email;
     }
 
+    /**
+     * Comparador baseado no nome do Cliente
+     */
     @Override
     public int compareTo(Cliente o) {
        return this.nome.compareTo(o.getNome());

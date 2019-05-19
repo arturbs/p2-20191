@@ -6,26 +6,26 @@ package SAGA;
  *
  * @author Artur Brito Souza - UFCG 
  */
-public class IdentificadorProduto {
+public class IdentificadorProdutoECombo {
 	
 	
 	/**
-     * Representacao do nome do produto.
+     * Representacao do nome que sera usado para formar o id.
      */
 	private String nome;
 	
 	/**
-     * Representacao da descricao do produto.
+     * Representacao da descricao que sera usado para formar o id.
      */
 	private String descricao;
 
 	/**
-     * Constroi um identificador do Produto
+     * Constroi um identificador (para o produto ou combo).
      *
-     * @param nome Representacao do nome do produto.
-     * @param descricao Representacao da descricao do produto.
+     * @param nome Representacao do nome que sera usado para formar o id.
+     * @param descricao Representacao da descricao que sera usado para formar o id.
      */
-	public IdentificadorProduto(String nome, String descricao) {
+	public IdentificadorProdutoECombo(String nome, String descricao) {
 		this.nome = nome;
 		this.descricao = descricao;
 	}
@@ -53,7 +53,7 @@ public class IdentificadorProduto {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		IdentificadorProduto other = (IdentificadorProduto) obj;
+		IdentificadorProdutoECombo other = (IdentificadorProdutoECombo) obj;
 		if (descricao == null) {
 			if (other.descricao != null)
 				return false;

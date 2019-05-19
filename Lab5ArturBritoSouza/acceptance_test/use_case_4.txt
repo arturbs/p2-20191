@@ -75,7 +75,7 @@ expectError "Erro na exibicao de produto: fornecedor nao existe." exibeProdutosF
 
 ## Listando os produtos de todos os fornecedores em ordem alfabetica ##
 
-expect "Ana Julia - Coca-cola - Garrafa de coca-cola de 1L - R$5,50 | Dona Alba - Rubacao - Feijao com arroz e queijo coalho - R$17,00 | \
+ expect "Ana Julia - Coca-cola - Garrafa de coca-cola de 1L - R$5,50 | Dona Alba - Rubacao - Feijao com arroz e queijo coalho - R$17,00 | \
 Guilherme Lanches - Acai - Acai de 300mL - R$5,00 | Guilherme Lanches - Acaraje - O sabor da Bahia - R$10,00 | \
 Lanchonete do Fabio - | Marcos - Coxao de Frango - Coxao de frango com cheddar - R$2,50 | Marcos - Coxao de Pizza - Coxao de frango com presunto e queijo - R$2,50 | \
 Maria Eduarda - Agua - Garrafa de agua de 500mL - R$1,00 | Maria Eduarda - Cafe com Leite - Um copo de 150mL com cafe e leite - R$1,00 | \
