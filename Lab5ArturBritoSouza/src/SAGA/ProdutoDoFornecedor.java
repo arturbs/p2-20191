@@ -57,7 +57,7 @@ public class ProdutoDoFornecedor implements Comparable<ProdutoDoFornecedor>{
 
     /**
      * Criado para alterar o atributo preco do Produto do Fornecedor
-     * @param String com o novo pre�o do Produto do Fornecedor
+     * @param String com o novo preco do Produto do Fornecedor
      */
     public void setPreco(double preco) {
         this.preco = preco;

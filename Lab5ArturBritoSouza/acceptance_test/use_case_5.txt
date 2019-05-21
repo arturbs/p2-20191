@@ -9,15 +9,12 @@ adicionaProduto fornecedor="Dona Alba" nome="Suco" descricao="Suco de goiaba (co
 adicionaProduto fornecedor="Marcos" nome="Batata frita" descricao="Porcao de batata frita" preco=4.00
 adicionaProduto fornecedor="Marcos" nome="Refrigerante" descricao="Refrigerante (lata)" preco=2.50
 
-expectError "Erro no cadastro de produto: fornecedor nao pode ser vazio ou nulo." adicionaProduto fornecedor="" nome="Agua" descricao="Garrafa de agua de 500mL" preco=1.00
-expectError "Erro no cadastro de produto: fornecedor nao pode ser vazio ou nulo." adicionaProduto fornecedor= nome="Agua" descricao="Garrafa de agua de 500mL" preco=1.00
-
 ## Adicionando combos ##
 
 adicionaCombo fornecedor="Seu Olavo" nome="X-burguer + suco" descricao="X-burguer com suco de maracuja" fator=0.20 produtos="X-burguer - Hamburguer de carne com queijo e calabresa, Suco - Suco de maracuja (copo)"
 adicionaCombo fornecedor="Seu Olavo" nome="X-burguer + refrigerante" descricao="X-burguer com refri (lata)" fator=0.20 produtos="X-burguer - Hamburguer de carne com queijo e calabresa, Coca-cola - Coca-cola (lata)"
 adicionaCombo fornecedor="Dona Alba" nome="Rubacao com suco" descricao="Rubacao completo com suco" fator=0.15 produtos="Rubacao - Feijao com arroz e queijo coalho, Suco - Suco de goiaba (copo)"
-adicionaCombo fornecedor="Marcos" nome="Coxao com batata" descricao="Coxao de frango com batata frita" fator=0.30 produtos="Coxao de Frango - Coxao de frango com cheddar, Refrigerante - Refrigerante (lata)"
+adicionaCombo fornecedor="Marcos" nome="Coxao com batata" descricao="Coxao de frango com batata frita" fator=0.30 produtos="Coxao de Frango - Coxao de frango com cheddar, Refrigerante - Refrigerante (lata)" 
 
 expectError "Erro no cadastro de combo: combo ja existe." adicionaCombo fornecedor="Seu Olavo" nome="X-burguer + suco" descricao="X-burguer com suco de maracuja" fator=0.20 produtos="X-burguer - Hamburguer de carne com queijo e calabresa, Suco - Suco de maracuja (copo)"
 expectError "Erro no cadastro de combo: fornecedor nao existe." adicionaCombo fornecedor="Helhao" nome="Tapioca com cafe" descricao="Tapioca de frango com cafe" fator=0.25 produtos="Tapioca de frango - Tapioca de frango e manteiga, Cafe - Cafe pequeno"
@@ -89,21 +86,21 @@ expect "Seu Olavo - Pastel de frango - Pastel de forno de frango - R$2,00\
  | Seu Olavo - X-burguer - Hamburguer de carne com queijo e calabresa - R$4,50\
  | Seu Olavo - X-burguer + refrigerante - X-burguer com refri (lata) - R$6,00\
  | Seu Olavo - X-burguer + suco - X-burguer com suco de maracuja - R$4,80" exibeProdutosFornecedor fornecedor="Seu Olavo"
-
+ 
 removeProduto nome="X-burguer + refrigerante" descricao="X-burguer com refri (lata)" fornecedor="Seu Olavo"
 
 expect "Seu Olavo - Pastel de frango - Pastel de forno de frango - R$2,00\
  | Seu Olavo - Suco - Suco de maracuja (copo) - R$1,50\
  | Seu Olavo - X-burguer - Hamburguer de carne com queijo e calabresa - R$4,50\
  | Seu Olavo - X-burguer + suco - X-burguer com suco de maracuja - R$4,80" exibeProdutosFornecedor fornecedor="Seu Olavo"
-
+ 
 removeProduto nome="Batata frita" descricao="Porcao de batata frita" fornecedor="Marcos"
 
  expect "Marcos - Coxao com batata - Coxao de frango com batata frita - R$4,00\
  | Marcos - Coxao de Frango - Coxao de frango com cheddar - R$2,50\
  | Marcos - Coxao de Pizza - Coxao de frango com presunto e queijo - R$2,50\
  | Marcos - Refrigerante - Refrigerante (lata) - R$2,50"  exibeProdutosFornecedor fornecedor="Marcos"
-
+ 
 expectError "Erro na remocao de produto: produto nao existe." removeProduto nome="X-burguer + refrigerante" descricao="X-burguer com refri" fornecedor="Seu Olavo"
 expectError "Erro na remocao de produto: fornecedor nao pode ser vazio ou nulo." removeProduto nome="X-burguer + refrigerante" descricao="X-burguer com refri" fornecedor=""
 expectError "Erro na remocao de produto: fornecedor nao pode ser vazio ou nulo." removeProduto nome="X-burguer + refrigerante" descricao="X-burguer com refri" fornecedor=

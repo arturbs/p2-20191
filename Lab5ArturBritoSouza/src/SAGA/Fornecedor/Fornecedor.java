@@ -49,17 +49,12 @@ public class Fornecedor implements Comparable<Fornecedor>{
      * @param numero Representação do numero do Fornecedor
      */
     public Fornecedor (String nome, String email, String telefone){
-		if (nome.trim().equals("") || nome == null ) {
-			throw new IllegalArgumentException("Erro no cadastro do fornecedor: nome nao pode ser vazio ou nulo.");
-		}
-
-		if (email.trim().equals("") || email == null ) {
-			throw new IllegalArgumentException("Erro no cadastro do fornecedor: email nao pode ser vazio ou nulo.");
-		}
-
-		if (telefone.trim().equals("") || telefone == null ) {
-			throw new IllegalArgumentException("Erro no cadastro do fornecedor: telefone nao pode ser vazio ou nulo.");
-		}
+		util.Validador.validaStringNull(nome, "Erro no cadastro do fornecedor: nome nao pode ser vazio ou nulo.");
+		util.Validador.validaStringVazia(nome, "Erro na edicao do Fornecedor: email nao pode ser vazio");
+		util.Validador.validaStringNull(email, "Erro no cadastro do fornecedor: email nao pode ser vazio ou nulo.");
+		util.Validador.validaStringVazia(email, "Erro no cadastro do fornecedor: email nao pode ser vazio ou nulo.");
+		util.Validador.validaStringNull(telefone, "Erro no cadastro do fornecedor: telefone nao pode ser vazio ou nulo.");
+		util.Validador.validaStringVazia(telefone, "Erro no cadastro do fornecedor: telefone nao pode ser vazio ou nulo.");
 
         this.nome = nome;
         this.email = email;
@@ -72,12 +67,9 @@ public class Fornecedor implements Comparable<Fornecedor>{
      * @param String com o novo email do Fornecedor
      */
     public void setEmail(String email) {
-    	if (email == null) {
-    		throw new NullPointerException("Erro na edicao do Fornecedor: email n�o pode ser nulo");
-    	}
-    	if (email.trim().equals("")) {
-    		throw new IllegalArgumentException("Erro na edi��o do Fornecedor: email n�o pode ser vazio");
-    	}
+
+		util.Validador.validaStringNull(email, "Erro na edicao do Fornecedor: email nao pode ser nulo");
+		util.Validador.validaStringVazia(email, "Erro na edicao do Fornecedor: email nao pode ser vazio");
         this.email = email;
     }
 
@@ -86,12 +78,8 @@ public class Fornecedor implements Comparable<Fornecedor>{
      * @param String com o novo telefone do Fornecedor
      */
     public void setTelefone(String telefone) {
-    	if (telefone == null) {
-    		throw new NullPointerException("Erro na edi��o do Fornecedor: telefone n�o pode ser nulo");
-    	}
-    	if (telefone.trim().equals("")) {
-    		throw new IllegalArgumentException("Erro na edi��o do Fornecedor: telefone n�o pode ser vazio");
-    	}
+		util.Validador.validaStringNull(telefone, "Erro na edicao do Fornecedor: telefone nao pode ser nulo");
+		util.Validador.validaStringVazia(telefone, "Erro na edicao do Fornecedor: telefone nao pode ser vazio");
         this.telefone = telefone;
     }
     
@@ -142,12 +130,10 @@ public class Fornecedor implements Comparable<Fornecedor>{
     public IdentificadorProdutoECombo cadastraProduto(String nome, String descricao, double preco){
     	IdentificadorProdutoECombo id = new IdentificadorProdutoECombo(nome.toLowerCase(), descricao.toLowerCase());
 
-		if (nome.trim().equals("") || nome == null) {
-			throw new IllegalArgumentException("Erro no cadastro de produto: nome nao pode ser vazio ou nulo.");
-		}
-		if (descricao.trim().equals("") || descricao == null ) {
-			throw new IllegalArgumentException("Erro no cadastro de produto: descricao nao pode ser vazia ou nula.");
-		}
+		util.Validador.validaStringNull(nome, "Erro no cadastro de produto: nome nao pode ser vazio ou nulo.");
+		util.Validador.validaStringVazia(nome, "Erro no cadastro de produto: nome nao pode ser vazio ou nulo.");
+		util.Validador.validaStringNull(descricao, "Erro no cadastro de produto: descricao nao pode ser vazia ou nula.");
+		util.Validador.validaStringVazia(descricao, "Erro no cadastro de produto: descricao nao pode ser vazia ou nula.");
 		if (preco < 0) {
 			throw new IllegalArgumentException("Erro no cadastro de produto: preco invalido.");
 		}
@@ -171,12 +157,10 @@ public class Fornecedor implements Comparable<Fornecedor>{
     	String saida = "";
     	IdentificadorProdutoECombo id = new IdentificadorProdutoECombo(nome.toLowerCase(), descricao.toLowerCase());
 
-		if (nome.trim().equals("") || nome == null) {
-			throw new IllegalArgumentException("Erro na exibicao de produto: nome nao pode ser vazio ou nulo.");
-		}
-		if (descricao.trim().equals("") || descricao == null ) {
-			throw new IllegalArgumentException("Erro na exibicao de produto: descricao nao pode ser vazia ou nula.");
-		}
+		util.Validador.validaStringNull(nome, "Erro na exibicao de produto: nome nao pode ser vazio ou nulo.");
+		util.Validador.validaStringVazia(nome, "Erro na exibicao de produto: nome nao pode ser vazio ou nulo.");
+		util.Validador.validaStringNull(descricao, "Erro na exibicao de produto: descricao nao pode ser vazia ou nula.");
+		util.Validador.validaStringVazia(descricao, "Erro na exibicao de produto: descricao nao pode ser vazia ou nula.");
     	if (this.listaDeProdutos.containsKey(id)) {
     		saida = this.listaDeProdutos.get(id).toString();
     	}
@@ -201,11 +185,15 @@ public class Fornecedor implements Comparable<Fornecedor>{
 
 		for (ProdutoDoFornecedor produtoDoFornecedor : produtoDoFornecedorList){
 
-			saida += getNome() + " - " + produtoDoFornecedor.toString() + " | ";
+			saida += this.nome + " - " + produtoDoFornecedor.toString() + " | ";
 
 		}
 
-		return saida.substring(0, saida.length() - 3);
+		if (saida.length() > 0) {
+			return saida.substring(0, saida.length() - 3);
+
+		}
+		return this.nome + " -";
     }
     
     
@@ -219,24 +207,16 @@ public class Fornecedor implements Comparable<Fornecedor>{
      */
     public String editaProduto(String nome, String descricao, double novoPreco) {
     	IdentificadorProdutoECombo id = new IdentificadorProdutoECombo(nome.toLowerCase(), descricao.toLowerCase());
-    	
-    	if (nome == null){
-    		throw new NullPointerException("Erro na alteração do produto: nome n�o pode ser nulo");
-    	}
-    	if (nome.trim().equals("")) {
-    		throw new IllegalArgumentException("Erro na alteração do produto: nome n�o pode ser vazio");
-    	}
-    	if (descricao == null){
-    		throw new NullPointerException("Erro na alteração do produto: descri��o n�o pode ser nulo");
-    	}
-    	if (descricao.trim().equals("")) {
-    		throw new IllegalArgumentException("Erro na alteração do produto: descri��o n�o pode ser vazio");
-    	}
+
+		util.Validador.validaStringNull(nome, "Erro na edicao de produto: nome nao pode ser vazio ou nulo.");
+		util.Validador.validaStringVazia(nome, "Erro na edicao de produto: nome nao pode ser vazio ou nulo.");
+		util.Validador.validaStringNull(descricao, "Erro na edicao de produto: descricao nao pode ser vazia ou nula.");
+		util.Validador.validaStringVazia(descricao, "Erro na edicao de produto: descricao nao pode ser vazia ou nula.");
     	if (!this.listaDeProdutos.containsKey(id)) {
-    		throw new IllegalArgumentException("Erro na alteração do produto: produto n�o cadastrado");
+    		throw new IllegalArgumentException("Erro na edicao de produto: produto nao existe.");
     	}
     	if (novoPreco < 0) {
-    		throw new IllegalArgumentException("Erro na altera��o do produto: pre�o n�o pode ser menor que 0");
+    		throw new IllegalArgumentException("Erro na alteracao do produto: preco nao pode ser menor que 0");
     	}
     	if (this.listaDeProdutos.containsKey(id)) {
     		this.listaDeProdutos.get(id).setPreco(novoPreco);
@@ -255,12 +235,10 @@ public class Fornecedor implements Comparable<Fornecedor>{
     	String saida = "";
     	IdentificadorProdutoECombo id = new IdentificadorProdutoECombo(nome.toLowerCase(), descricao.toLowerCase());
 
-		if (nome == null || nome.trim().equals("")){
-			throw new NullPointerException("Erro na remocao de produto: nome nao pode ser vazio ou nulo.");
-		}
-		if (descricao == null || descricao.trim().equals("")){
-			throw new NullPointerException("Erro na remocao de produto: descricao nao pode ser vazia ou nula.");
-		}
+		util.Validador.validaStringNull(nome, "Erro na remocao de produto: nome nao pode ser vazio ou nulo.");
+		util.Validador.validaStringVazia(nome, "Erro na remocao de produto: nome nao pode ser vazio ou nulo.");
+		util.Validador.validaStringNull(descricao, "Erro na remocao de produto: descricao nao pode ser vazia ou nula.");
+		util.Validador.validaStringVazia(descricao, "Erro na remocao de produto: descricao nao pode ser vazia ou nula.");
 		if (!this.listaDeProdutos.containsKey(id)){
 			throw new IllegalArgumentException("Erro na remocao de produto: produto nao existe.");
 		}

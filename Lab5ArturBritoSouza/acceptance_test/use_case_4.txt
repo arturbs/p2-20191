@@ -1,4 +1,4 @@
-# Parte 2 do SAGA - US4.
+# Parte 2 do SAGA - US4. 
 
 ## Criando novos clientes ##
 
@@ -23,8 +23,6 @@ removeCliente cpf=${cliente8}
 removeCliente cpf=${cliente9}
 removeCliente cpf=${cliente10}
 
-expectError "Erro na exibicao do cliente: cliente nao existe." exibeCliente cpf=${cliente10}
-
 ## Listando novamente os clientes apos remocoes ##
 
 expect "Amigao Fernandes - SPG - amigao_fernandes@ccc.ufcg.edu.br | Ana Amari - SPG - ana_amari@ccc.ufcg.edu.br | \
@@ -37,9 +35,6 @@ fornecedor6=adicionaFornecedor nome="Ana Julia" email="anajulia415@gmail.com" te
 fornecedor7=adicionaFornecedor nome="Maria Eduarda" email="eduardamaria2000@gmail.com" telefone="83 92095-1285"
 fornecedor8=adicionaFornecedor nome="Guilherme Lanches" email="guilhermelanches@gmail.com" telefone="83 94290-2693"
 fornecedor9=adicionaFornecedor nome="Lanchonete do Fabio" email="lanchonete_fabio@hotmail.com" telefone="83 95845-6546"
-
-expect "Pedro - pedrao@gmail.com - 83 95807-7570" exibeFornecedor nome=${fornecedor5}
-expect "Lanchonete do Fabio - lanchonete_fabio@hotmail.com - 83 95845-6546" exibeFornecedor nome=${fornecedor9}
 
 ## Listando os fornecedores em ordem alfabetica ##
 
@@ -75,7 +70,7 @@ expectError "Erro na exibicao de produto: fornecedor nao existe." exibeProdutosF
 
 ## Listando os produtos de todos os fornecedores em ordem alfabetica ##
 
- expect "Ana Julia - Coca-cola - Garrafa de coca-cola de 1L - R$5,50 | Dona Alba - Rubacao - Feijao com arroz e queijo coalho - R$17,00 | \
+expect "Ana Julia - Coca-cola - Garrafa de coca-cola de 1L - R$5,50 | Dona Alba - Rubacao - Feijao com arroz e queijo coalho - R$17,00 | \
 Guilherme Lanches - Acai - Acai de 300mL - R$5,00 | Guilherme Lanches - Acaraje - O sabor da Bahia - R$10,00 | \
 Lanchonete do Fabio - | Marcos - Coxao de Frango - Coxao de frango com cheddar - R$2,50 | Marcos - Coxao de Pizza - Coxao de frango com presunto e queijo - R$2,50 | \
 Maria Eduarda - Agua - Garrafa de agua de 500mL - R$1,00 | Maria Eduarda - Cafe com Leite - Um copo de 150mL com cafe e leite - R$1,00 | \
@@ -91,10 +86,6 @@ removeFornecedor nome=${fornecedor7}
 removeFornecedor nome=${fornecedor8}
 removeFornecedor nome=${fornecedor9}
 
-expectError "Erro na remocao do fornecedor: nome do fornecedor nao pode ser vazio." removeFornecedor nome=""
-expectError "Erro na remocao do fornecedor: nome do fornecedor nao pode ser vazio." removeFornecedor nome=
-expectError "Erro na remocao do fornecedor: fornecedor nao existe." removeFornecedor nome="Rita"
-
 ## Listando novamente os fornecedores apos remocoes ##
 
 expect "Dona Alba - varandas_bar@gmail.com - 83 99945-1294 | Marcos - marcos_lanchonete@gmail.com - 83 99931-9230 | \
@@ -104,3 +95,4 @@ Seu Olavo - olavo@gmail.com - 83 99348-1092" exibeFornecedores
 
 expect "Dona Alba - Rubacao - Feijao com arroz e queijo coalho - R$17,00 | Marcos - Coxao de Frango - Coxao de frango com cheddar - R$2,50 | \
 Marcos - Coxao de Pizza - Coxao de frango com presunto e queijo - R$2,50 | Seu Olavo - X-burguer - Hamburguer de carne com queijo e calabresa - R$4,50" exibeProdutos
+
