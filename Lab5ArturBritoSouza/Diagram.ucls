@@ -82,7 +82,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="SAGA.ProdutoDoFornecedor" project="Lab5ArturBritoSouza" 
+  <class id="10" language="java" name="SAGA.ProdutoDoFornecedorAbstract" project="Lab5ArturBritoSouza"
     file="/Lab5ArturBritoSouza/src/SAGA/ProdutoDoFornecedor.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="243" width="234" x="4012" y="3971"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 

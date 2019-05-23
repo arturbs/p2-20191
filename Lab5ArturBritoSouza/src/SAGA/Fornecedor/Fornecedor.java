@@ -1,7 +1,9 @@
 package SAGA.Fornecedor;
 
+import SAGA.Combo;
 import SAGA.IdentificadorProdutoECombo;
-import SAGA.ProdutoDoFornecedor;
+import SAGA.Produto;
+import SAGA.ProdutoDoFornecedorAbstract;
 
 import java.util.*;
 
@@ -33,20 +35,15 @@ public class Fornecedor implements Comparable<Fornecedor>{
      * Representacao dos produtos cadastrados pelo Fornecedor. Possui como chave o IdentificadorProdutoECombo que e uma classe que cria
      * uma identifcacao unica com base no nome e descricao do produto.
      */
-    private HashMap <IdentificadorProdutoECombo, ProdutoDoFornecedor> listaDeProdutos;
+    private HashMap <IdentificadorProdutoECombo, ProdutoDoFornecedorAbstract> listaDeProdutos;
 
-	/**
-	 * Representacao dos combos de produtos cadastrados pelo Fornecedor. Possui como chave o IdentificadorCombo que e uma classe que cria
-	 * uma identifcacao unica com base no nome e descricao do produto.
-	 */
-    //private HashMap <IdentificadorCombo, ComboDoFornecedor> listaDeCombos;
 
     /**
      * Constroi um Fornecedor
      *
      * @param nome Representação do nome do Fornecedor
      * @param email Representação do email do Fornecedor
-     * @param numero Representação do numero do Fornecedor
+     * @param telefone Representação do numero do Fornecedor
      */
     public Fornecedor (String nome, String email, String telefone){
 		util.Validador.validaStringNull(nome, "Erro no cadastro do fornecedor: nome nao pode ser vazio ou nulo.");
@@ -141,7 +138,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
             throw new IllegalArgumentException("Erro no cadastro de produto: produto ja existe.");
         }
 
-        ProdutoDoFornecedor p = new ProdutoDoFornecedor(nome, descricao, preco);
+        Produto p = new Produto(nome, descricao, false, preco);
         this.listaDeProdutos.put(id, p);
         return id;
     }
@@ -151,7 +148,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
      *
      * @param nome - nome de produto
      * @param descricao - descricao do produto
-     * @return uma String com a representa��o de um produto
+     * @return uma String com a representacao de um produto
      */
     public String encontraProduto (String nome, String descricao) {
     	String saida = "";
@@ -180,12 +177,12 @@ public class Fornecedor implements Comparable<Fornecedor>{
 		String saida = "";
 
 
-		List<ProdutoDoFornecedor> produtoDoFornecedorList = new ArrayList<>(this.listaDeProdutos.values());
-		Collections.sort(produtoDoFornecedorList);
+		List<ProdutoDoFornecedorAbstract> produtoDoFornecedorAbstractList = new ArrayList<>(this.listaDeProdutos.values());
+		Collections.sort(produtoDoFornecedorAbstractList);
 
-		for (ProdutoDoFornecedor produtoDoFornecedor : produtoDoFornecedorList){
+		for (ProdutoDoFornecedorAbstract produtoDoFornecedorAbstract : produtoDoFornecedorAbstractList){
 
-			saida += this.nome + " - " + produtoDoFornecedor.toString() + " | ";
+			saida += this.nome + " - " + produtoDoFornecedorAbstract.toString() + " | ";
 
 		}
 
@@ -200,8 +197,8 @@ public class Fornecedor implements Comparable<Fornecedor>{
     /**
      * Criado para editar algum atributo do Cliente.
      *
-     * @param nome String com nome do produto que ir� formar o id.
-     * @param descricao String com a descricao do produto que ir� formar o id.
+     * @param nome String com nome do produto que ira formar o id.
+     * @param descricao String com a descricao do produto que ira formar o id.
      * @param novoPreco double que sera o novo valor do preco do produto
      * @return String com a frase Altercao concluida
      */
@@ -219,7 +216,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
     		throw new IllegalArgumentException("Erro na alteracao do produto: preco nao pode ser menor que 0");
     	}
     	if (this.listaDeProdutos.containsKey(id)) {
-    		this.listaDeProdutos.get(id).setPreco(novoPreco);
+    		this.listaDeProdutos.get(id).alteraValor(novoPreco);
     	}
     	return "Alteracao concluida";
     }
@@ -255,4 +252,30 @@ public class Fornecedor implements Comparable<Fornecedor>{
 	public int compareTo(Fornecedor o) {
 		return this.nome.compareTo(o.getNome());
 	}
+
+	public IdentificadorProdutoECombo cadastraCombo(String nome, String descricao, double fator, String produtos){
+		IdentificadorProdutoECombo id = new IdentificadorProdutoECombo(nome.toLowerCase(), descricao.toLowerCase());
+
+		util.Validador.validaStringNull(nome, "Erro no cadastro de combo: nome nao pode ser vazio ou nulo.");
+		util.Validador.validaStringVazia(nome, "Erro no cadastro de combo: nome nao pode ser vazio ou nulo.");
+		util.Validador.validaStringNull(descricao, "Erro no cadastro de combo: descricao nao pode ser vazia ou nula.");
+		util.Validador.validaStringVazia(descricao, "Erro no cadastro de combo: descricao nao pode ser vazia ou nula.");
+		util.Validador.validaStringNull(produtos, "Erro no cadastro de combo: combo deve ter produtos.");
+		util.Validador.validaStringVazia(produtos, "Erro no cadastro de combo: combo deve ter produtos.");
+		if (fator <= 0 || fator >= 1) {
+			throw new IllegalArgumentException("Erro no cadastro de combo: fator invalido.");
+		}
+		if (listaDeProdutos.containsKey(id)){
+			throw new IllegalArgumentException("Erro no cadastro de combo: combo ja existe.");
+		}
+		//if (!listaDeProdutos.containsKey(id)){
+		//	throw new IllegalArgumentException("Erro no cadastro de combo: produto nao existe.");
+		//}
+
+
+		Combo c = new Combo(nome, descricao, true, fator);
+		this.listaDeProdutos.put(id, c);
+		return id;
+	}
+
 }

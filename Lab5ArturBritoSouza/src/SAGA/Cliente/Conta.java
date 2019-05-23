@@ -1,4 +1,4 @@
-package SAGA;
+package SAGA.Cliente;
 
 public class Conta {
 

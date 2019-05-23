@@ -8,60 +8,56 @@ import java.util.Objects;
  *
  * @author Artur Brito Souza - UFCG 
  */
-public class ProdutoDoFornecedor implements Comparable<ProdutoDoFornecedor>{
+public abstract class ProdutoDoFornecedorAbstract implements Comparable<ProdutoDoFornecedorAbstract>{
 
 	/**
      * Representacao do Nome do Produto do Fornecedor
      */
-    private String nome;
+    protected String nome;
     
     /**
-     * Representacao do preco do Produto do Fornecedor
+     * Representacao da variavel que verifica se e combo ou produto.
      */
-    private double preco;
+    protected boolean combo;
     
     /**
      * Representacao da descricao do Produto do Fornecedor
      */
-    private String descricao;
+    protected String descricao;
 
     /**
      * Constroi um Produto do Fornecedor
      *
      * @param nome Representacao do nome do Produto do Fornecedor
      * @param descricao Representacao da descricao do Produto do Fornecedor
-     * @param preco Representacao do preco do Produto do Fornecedor
+     * @param combo Representacao da variavel qe verifica se e combo ou produto.
      */
-    public ProdutoDoFornecedor(String nome, String descricao, double preco) {
+    public ProdutoDoFornecedorAbstract(String nome, String descricao, boolean combo) {
         this.nome = nome;
-        this.preco = preco;
         this.descricao = descricao;
+        this.combo = combo;
     }
 
+    public abstract double getPreco();
+
+    public abstract void alteraValor(double novoValor);
+
+    public boolean  combavel(){
+        return (!this.combo);
+    }
 
     /**
      * Criado para retornar o nome do Produto do Fornecedor
      * @return String com o nome do Produto do Fornecedor
      */
-    public String getNome() {
-        return nome;
-    }
+    public String getNome() { return nome; }
 
     /**
      * Criado para retornar a descricao do Produto do Fornecedor
      * @return String com a descricao do Produto do Fornecedor
      */
-    public String getDescricao() {
-        return descricao;
-    }
+    public String getDescricao() { return descricao; }
 
-    /**
-     * Criado para alterar o atributo preco do Produto do Fornecedor
-     * @param String com o novo preco do Produto do Fornecedor
-     */
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
 
     /**
      * Equals Baseado no nome e na descricao do Produto do Fornecedor
@@ -70,7 +66,7 @@ public class ProdutoDoFornecedor implements Comparable<ProdutoDoFornecedor>{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ProdutoDoFornecedor that = (ProdutoDoFornecedor) o;
+        ProdutoDoFornecedorAbstract that = (ProdutoDoFornecedorAbstract) o;
         return Objects.equals(nome, that.nome) &&
                 Objects.equals(descricao, that.descricao);
     }
@@ -89,14 +85,14 @@ public class ProdutoDoFornecedor implements Comparable<ProdutoDoFornecedor>{
      */
     @Override
     public String toString() {
-        return nome + " - " + descricao + " - R$" + String.format("%.2f", preco);
+        return nome + " - " + descricao + " - R$" + String.format("%.2f", this.getPreco());
     }
 
     /**
      * Comparador baseado no nome do Produto
      */
     @Override
-    public int compareTo(ProdutoDoFornecedor o) {
+    public int compareTo(ProdutoDoFornecedorAbstract o) {
         return this.nome.compareTo(o.getNome());
     }
 }

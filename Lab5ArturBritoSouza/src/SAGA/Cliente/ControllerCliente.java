@@ -37,9 +37,7 @@ public class ControllerCliente {
 
         util.Validador.validaStringNull(cpf, "Erro no cadastro do cliente: cpf nao pode ser vazio ou nulo." );
         util.Validador.validaStringVazia(cpf, "Erro no cadastro do cliente: cpf nao pode ser vazio ou nulo.");
-        if ((cpf.length() != 11)){
-            throw new IllegalArgumentException("Erro no cadastro do cliente: cpf invalido.");
-        }
+        util.Validador.validaTamanhoString(cpf, 11, 11, "Erro no cadastro do cliente: cpf invalido." );
         util.Validador.validaStringNull(nome, "Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.");
         util.Validador.validaStringVazia(nome, "Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.");
         util.Validador.validaStringNull(email, "Erro no cadastro do cliente: email nao pode ser vazio ou nulo.");
@@ -155,4 +153,29 @@ public class ControllerCliente {
         }
         return saida;
     }
+
+    public String cadastraCompra(String cpf, String fornecedor, String data, String nome_prod, String desc_prod) {
+        String saida = "";
+        util.Validador.validaStringNull(cpf, "Erro ao cadastrar compra: cpf nao pode ser vazio ou nulo.");
+        util.Validador.validaStringVazia(cpf,"Erro ao cadastrar compra: cpf nao pode ser vazio ou nulo.");
+        util.Validador.validaTamanhoString(cpf, 11, 11, "Erro ao cadastrar compra: cpf invalido.");
+        util.Validador.validaStringNull(fornecedor, "Erro ao cadastrar compra: fornecedor nao pode ser vazio ou nulo.");
+        util.Validador.validaStringVazia(fornecedor,"Erro ao cadastrar compra: fornecedor nao pode ser vazio ou nulo.");
+        //if (como eu pego fornecedor ?)
+        util.Validador.validaStringNull(data, "Erro ao cadastrar compra: data nao pode ser vazia ou nula..");
+        util.Validador.validaStringVazia(data,"Erro ao cadastrar compra: data nao pode ser vazia ou nula.");
+        util.Validador.validaTamanhoString(data, 10, 10, "Erro ao cadastrar compra: data invalida.");
+        util.Validador.validaStringNull(nome_prod, "Erro ao cadastrar compra: nome do produto nao pode ser vazio ou nulo.");
+        util.Validador.validaStringVazia(nome_prod,"Erro ao cadastrar compra: nome do produto nao pode ser vazio ou nulo..");
+        util.Validador.validaStringNull(desc_prod, "Erro ao cadastrar compra: descricao do produto nao pode ser vazia ou nula.");
+        util.Validador.validaStringVazia(desc_prod,"Erro ao cadastrar compra: descricao do produto nao pode ser vazia ou nula.");
+        if (!this.clientes.containsKey(cpf)) {
+            throw new IllegalArgumentException("Erro ao cadastrar compra: cliente nao existe.");
+        }
+
+        return saida;
+        //return this.clientes.get(cpf).compra
+
+    }
+
 }

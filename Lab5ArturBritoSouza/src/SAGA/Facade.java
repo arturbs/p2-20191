@@ -17,8 +17,8 @@ public class Facade {
 	public static void main(String[] args) {
 		args = new String[] { "SAGA.Facade", "acceptance_test/use_case_1.txt",
 				"acceptance_test/use_case_2.txt", "acceptance_test/use_case_3.txt", "acceptance_test/use_case_4.txt",
-				//"acceptance_test/use_case_5.txt",
-				//"acceptance_test/use_case_6.txt",
+				"acceptance_test/use_case_5.txt",
+				//"acceptance_test/use_case_6.txt", "acceptance_test/use_case_7.txt", "acceptance_test/use_case_8.txt",
 				};
 		EasyAccept.main(args);
 	}
@@ -92,10 +92,17 @@ public class Facade {
 	}
 
 	//Combo
-	//public String adicionaCombo(String nomeFornecedor, nomeCombo, descricaoCombo, fator, nomeProduto1, nomeProduto2){
-	//	return this.fornecedores.cadastraCombo(nomeFornecedor, nomeCombo, descricaoCombo, fator, nomeProduto1, nomeProduto2);
+	public void adicionaCombo(String Fornecedor, String nome, String descricao, double fator, String produtos){
+		this.fornecedores.cadastraCombo(Fornecedor, nome, descricao, fator, produtos);
 
-	//}
+	}
+
+
+
+	//Compras
+	public void adicionaCompra (String cpf, String fornecedor, String data, String nome_prod, String desc_prod) {
+		this.clientes.cadastraCompra(cpf, fornecedor, data, nome_prod, desc_prod);
+	}
 		
 }
 	
