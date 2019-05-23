@@ -158,6 +158,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
 		util.Validador.validaStringVazia(nome, "Erro na exibicao de produto: nome nao pode ser vazio ou nulo.");
 		util.Validador.validaStringNull(descricao, "Erro na exibicao de produto: descricao nao pode ser vazia ou nula.");
 		util.Validador.validaStringVazia(descricao, "Erro na exibicao de produto: descricao nao pode ser vazia ou nula.");
+
     	if (this.listaDeProdutos.containsKey(id)) {
     		saida = this.listaDeProdutos.get(id).toString();
     	}
@@ -175,7 +176,6 @@ public class Fornecedor implements Comparable<Fornecedor>{
      */
     public String listaProdutosFornecedor () {
 		String saida = "";
-
 
 		List<ProdutoDoFornecedorAbstract> produtoDoFornecedorAbstractList = new ArrayList<>(this.listaDeProdutos.values());
 		Collections.sort(produtoDoFornecedorAbstractList);
@@ -253,28 +253,54 @@ public class Fornecedor implements Comparable<Fornecedor>{
 		return this.nome.compareTo(o.getNome());
 	}
 
+    /**
+     * Criado para cadastrar um combo em um fornecedor
+     *
+     * @param nome String com o nome do combo
+     * @param descricao String com a descricao do combo
+     * @param fator double com o fator do desconto do combo
+     * retur id do combo cadastrado
+     */
 	public IdentificadorProdutoECombo cadastraCombo(String nome, String descricao, double fator, String produtos){
-		IdentificadorProdutoECombo id = new IdentificadorProdutoECombo(nome.toLowerCase(), descricao.toLowerCase());
-
 		util.Validador.validaStringNull(nome, "Erro no cadastro de combo: nome nao pode ser vazio ou nulo.");
 		util.Validador.validaStringVazia(nome, "Erro no cadastro de combo: nome nao pode ser vazio ou nulo.");
 		util.Validador.validaStringNull(descricao, "Erro no cadastro de combo: descricao nao pode ser vazia ou nula.");
 		util.Validador.validaStringVazia(descricao, "Erro no cadastro de combo: descricao nao pode ser vazia ou nula.");
 		util.Validador.validaStringNull(produtos, "Erro no cadastro de combo: combo deve ter produtos.");
 		util.Validador.validaStringVazia(produtos, "Erro no cadastro de combo: combo deve ter produtos.");
-		if (fator <= 0 || fator >= 1) {
+		String[] produtoCombo = produtos.split(",");
+
+
+		Set<ProdutoDoFornecedorAbstract> produtosCadastro = new HashSet<>();
+		for (String produto : produtoCombo) {
+            String[] produtosSeparados = produto.split(" - ");
+            IdentificadorProdutoECombo idProdutosSimples = new IdentificadorProdutoECombo(produtosSeparados[0].toLowerCase().trim(), produtosSeparados[1].toLowerCase().trim());
+
+
+          if (!this.listaDeProdutos.containsKey(idProdutosSimples)){
+                throw new IllegalArgumentException("Erro no cadastro de combo: produto nao existe.");
+          }
+
+            ProdutoDoFornecedorAbstract p = this.listaDeProdutos.get(idProdutosSimples);
+            produtosCadastro.add(p);
+
+        }
+
+
+        IdentificadorProdutoECombo id = new IdentificadorProdutoECombo(nome.toLowerCase(), descricao.toLowerCase());
+
+        if (fator <= 0 || fator >= 1) {
 			throw new IllegalArgumentException("Erro no cadastro de combo: fator invalido.");
 		}
 		if (listaDeProdutos.containsKey(id)){
 			throw new IllegalArgumentException("Erro no cadastro de combo: combo ja existe.");
 		}
-		//if (!listaDeProdutos.containsKey(id)){
-		//	throw new IllegalArgumentException("Erro no cadastro de combo: produto nao existe.");
-		//}
 
 
-		Combo c = new Combo(nome, descricao, true, fator);
+
+		Combo c = new Combo(nome, descricao, true, fator, produtosCadastro);
 		this.listaDeProdutos.put(id, c);
+        System.out.println(this.listaDeProdutos.get(id));
 		return id;
 	}
 

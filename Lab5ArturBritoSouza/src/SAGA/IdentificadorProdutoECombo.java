@@ -66,4 +66,12 @@ public class IdentificadorProdutoECombo {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "IdentificadorProdutoECombo{" +
+				"nome='" + nome + '\'' +
+				", descricao='" + descricao + '\'' +
+				'}';
+	}
 }

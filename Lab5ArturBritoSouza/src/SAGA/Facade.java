@@ -97,6 +97,10 @@ public class Facade {
 
 	}
 
+    public String editaCombo(String nome, String descricao, String Fornecedor, double novoFator) {
+        return this.fornecedores.editaCombo(nome, descricao, Fornecedor, novoFator);
+    }
+
 
 
 	//Compras

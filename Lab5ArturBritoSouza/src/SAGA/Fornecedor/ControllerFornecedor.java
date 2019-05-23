@@ -321,4 +321,24 @@ public class ControllerFornecedor {
 
         fornecedores.get(nomeFornecedor).cadastraCombo(nomeCombo, descricao, fator, produtos);
     }
+
+    public String editaCombo(String nome, String descricao, String Fornecedor, double novoFator) {
+
+        util.Validador.validaStringNull(Fornecedor, "Erro na edicao de produto: fornecedor nao pode ser vazio ou nulo.");
+        util.Validador.validaStringVazia(Fornecedor, "Erro na edicao de produto: fornecedor nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNull(nome, "Erro na edicao de produto: nome nao pode ser vazio ou nulo.");
+        util.Validador.validaStringVazia(nome, "Erro na edicao de produto: nome nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNull(descricao, "Erro na edicao de produto: descricao nao pode ser vazia ou nula.");
+        util.Validador.validaStringVazia(descricao, "Erro na edicao de produto: descricao nao pode ser vazia ou nula.");
+
+        if (novoFator < 0) {
+            throw new IllegalArgumentException("Erro na edicao de produto: preco invalido.");
+        }
+        if (!fornecedores.containsKey(Fornecedor)){
+            throw new NullPointerException("Erro na edicao de produto: fornecedor nao existe.");
+        }
+
+        return this.fornecedores.get(Fornecedor).editaProduto(nome, descricao, novoFator);
+
+    }
 }
