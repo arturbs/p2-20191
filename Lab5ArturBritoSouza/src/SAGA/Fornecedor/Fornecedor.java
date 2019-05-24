@@ -281,10 +281,15 @@ public class Fornecedor implements Comparable<Fornecedor>{
                 throw new IllegalArgumentException("Erro no cadastro de combo: produto nao existe.");
           }
 
+          if (this.listaDeProdutos.get(idProdutosSimples).isCombo()){
+			  throw new IllegalArgumentException("Erro no cadastro de combo: um combo nao pode possuir combos na lista de produtos.");
+		  }
+
             ProdutoDoFornecedorAbstract p = this.listaDeProdutos.get(idProdutosSimples);
             produtosCadastro.add(p);
 
         }
+
 
 
         IdentificadorProdutoECombo id = new IdentificadorProdutoECombo(nome.toLowerCase(), descricao.toLowerCase());
@@ -304,4 +309,22 @@ public class Fornecedor implements Comparable<Fornecedor>{
 		return id;
 	}
 
+	public String editaCombo(String nome, String descricao, double novoFator) {
+		IdentificadorProdutoECombo id = new IdentificadorProdutoECombo(nome.toLowerCase(), descricao.toLowerCase());
+
+		util.Validador.validaStringNull(nome, "Erro na edicao de combo: nome nao pode ser vazio ou nulo.");
+		util.Validador.validaStringVazia(nome, "Erro na edicao de combo: nome nao pode ser vazio ou nulo.");
+		util.Validador.validaStringNull(descricao, "Erro na edicao de combo: descricao nao pode ser vazia ou nula.");
+		util.Validador.validaStringVazia(descricao, "Erro na edicao de combo: descricao nao pode ser vazia ou nula.");
+		if (!this.listaDeProdutos.containsKey(id)) {
+			throw new IllegalArgumentException("Erro na edicao de combo: produto nao existe.");
+		}
+		if (novoFator <= 0 || novoFator >= 1) {
+			throw new IllegalArgumentException("Erro na edicao de combo: fator invalido.");
+		}
+		if (this.listaDeProdutos.containsKey(id)) {
+			this.listaDeProdutos.get(id).alteraValor(novoFator);
+		}
+		return "Alteracao concluida";
+	}
 }

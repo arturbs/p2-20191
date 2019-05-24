@@ -58,6 +58,13 @@ public abstract class ProdutoDoFornecedorAbstract implements Comparable<ProdutoD
      */
     public String getDescricao() { return descricao; }
 
+    /**
+     * Criado para retornar um boolean om a aafirmacao se e combo ou nao.
+     * @return boolean com a afirmacao.
+     */
+    public boolean isCombo() {
+        return combo;
+    }
 
     /**
      * Equals Baseado no nome e na descricao do Produto do Fornecedor

@@ -324,21 +324,22 @@ public class ControllerFornecedor {
 
     public String editaCombo(String nome, String descricao, String Fornecedor, double novoFator) {
 
-        util.Validador.validaStringNull(Fornecedor, "Erro na edicao de produto: fornecedor nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(Fornecedor, "Erro na edicao de produto: fornecedor nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(nome, "Erro na edicao de produto: nome nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(nome, "Erro na edicao de produto: nome nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(descricao, "Erro na edicao de produto: descricao nao pode ser vazia ou nula.");
-        util.Validador.validaStringVazia(descricao, "Erro na edicao de produto: descricao nao pode ser vazia ou nula.");
+        util.Validador.validaStringNull(Fornecedor, "Erro na edicao de combo: fornecedor nao pode ser vazio ou nulo.");
+        util.Validador.validaStringVazia(Fornecedor, "Erro na edicao de combo: fornecedor nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNull(nome, "Erro na edicao de combo: nome nao pode ser vazio ou nulo.");
+        util.Validador.validaStringVazia(nome, "Erro na edicao de combo: nome nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNull(descricao, "Erro na edicao de combo: descricao nao pode ser vazia ou nula.");
+        util.Validador.validaStringVazia(descricao, "Erro na edicao de combo: descricao nao pode ser vazia ou nula.");
+
 
         if (novoFator < 0) {
-            throw new IllegalArgumentException("Erro na edicao de produto: preco invalido.");
+            throw new IllegalArgumentException("Erro na edicao de combo: preco invalido.");
         }
         if (!fornecedores.containsKey(Fornecedor)){
-            throw new NullPointerException("Erro na edicao de produto: fornecedor nao existe.");
+            throw new NullPointerException("Erro na edicao de combo: fornecedor nao existe.");
         }
 
-        return this.fornecedores.get(Fornecedor).editaProduto(nome, descricao, novoFator);
+        return this.fornecedores.get(Fornecedor).editaCombo(nome, descricao, novoFator);
 
     }
 }

@@ -24,4 +24,6 @@ public class Produto extends ProdutoDoFornecedorAbstract {
     public void alteraValor(double novoPreco) {
         this.preco = novoPreco;
     }
+
+
 }
