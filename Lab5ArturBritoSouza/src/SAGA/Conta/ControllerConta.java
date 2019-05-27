@@ -12,12 +12,12 @@ public class ControllerConta {
     }
 
 
-    public void cadastraCompra(String cpf, String fornecedor, String data, String nome_prod, double preco) {
+    public void cadastraCompra(String cpf, String fornecedor, String data, String nome_prod, double preco, String nome_cliente) {
         IdentificadorConta  id = new IdentificadorConta(cpf.toLowerCase(), fornecedor.toLowerCase());
 
         if (!contas.containsKey(id)){
 
-            Conta c = new Conta(cpf, fornecedor);
+            Conta c = new Conta(cpf, fornecedor, nome_cliente);
             contas.put(id, c);
         }
         System.out.println(contas);
@@ -29,5 +29,12 @@ public class ControllerConta {
         IdentificadorConta  id = new IdentificadorConta(cpf.toLowerCase(), fornecedor.toLowerCase());
 
         return contas.get(id).getDebito();
+    }
+
+    public String exibeconta(String cpf, String fornecedor){
+        IdentificadorConta  id = new IdentificadorConta(cpf.toLowerCase(), fornecedor.toLowerCase());
+
+        return contas.toString();
+
     }
 }

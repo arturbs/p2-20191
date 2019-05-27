@@ -117,17 +117,18 @@ public class SAGAController {
 
         IdentificadorProdutoECombo identificador = new IdentificadorProdutoECombo(nome_prod.toLowerCase(), desc_prod.toLowerCase());
         double preco = this.fornecedores.getPreco(fornecedor, identificador);
+        String nome_cliente = clientes.getNomeCliente(cpf);
         System.out.println(preco);
-        this.contas.cadastraCompra(cpf, fornecedor, data, nome_prod, preco);
+        this.contas.cadastraCompra(cpf, fornecedor, data, nome_prod, preco, nome_cliente);
     }
 
     public double getDebito (String cpf, String fornecedor){
         util.Validador.validaStringNullEVazia(cpf, "Erro ao recuperar debito: cpf nao pode ser vazio ou nulo.");
+
+        util.Validador.validaTamanhoString(cpf, 11, 11, "Erro ao recuperar debito: cpf invalido.");
         if (!this.clientes.getClientes().containsKey(cpf)) {
             throw new IllegalArgumentException("Erro ao recuperar debito: cliente nao existe.");
         }
-
-        util.Validador.validaTamanhoString(cpf, 11, 11, "Erro ao recuperar debito: cpf invalido.");
         util.Validador.validaStringNullEVazia(fornecedor, "Erro ao recuperar debito: fornecedor nao pode ser vazio ou nulo.");
         if(!this.fornecedores.getFornecedores().containsKey(fornecedor)){
             throw new IllegalArgumentException("Erro ao recuperar debito: fornecedor nao existe.");

@@ -153,4 +153,7 @@ public class ControllerCliente {
         return saida;
     }
 
+    public String getNomeCliente (String cpf){
+        return clientes.get(cpf).getNome();
+    }
 }

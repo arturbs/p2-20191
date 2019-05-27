@@ -9,6 +9,8 @@ public class Conta {
 
     private String cpf;
 
+    private String nomeCliente;
+
     private String nomeFornecedor;
 
     private double debito;
@@ -16,12 +18,13 @@ public class Conta {
     private ArrayList<Compra> compras;
 
 
-    public Conta (String cpf, String nomeFornecedor){
+    public Conta (String cpf, String nomeFornecedor, String nomeCliente){
 
 
         this.cpf = cpf;
         this.debito = 0;
         this.nomeFornecedor = nomeFornecedor;
+        this.nomeCliente = nomeCliente;
     }
 
     @Override
@@ -51,5 +54,10 @@ public class Conta {
             debitoTotal += listaDeCompras.getPreco();
         }
         return debitoTotal;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente: " + nomeCliente + " | " + nomeFornecedor + " | " + compras;
     }
 }

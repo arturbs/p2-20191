@@ -20,4 +20,9 @@ public class Compra {
     public double getPreco() {
         return preco;
     }
+
+    @Override
+    public String toString() {
+        return produto + " - " + data;
+    }
 }
