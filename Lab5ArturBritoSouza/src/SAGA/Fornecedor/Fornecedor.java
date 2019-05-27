@@ -1,9 +1,9 @@
 package SAGA.Fornecedor;
 
-import SAGA.Combo;
-import SAGA.IdentificadorProdutoECombo;
-import SAGA.Produto;
-import SAGA.ProdutoDoFornecedorAbstract;
+import SAGA.ProdutosEDerivados.Combo;
+import SAGA.ProdutosEDerivados.IdentificadorProdutoECombo;
+import SAGA.ProdutosEDerivados.Produto;
+import SAGA.ProdutosEDerivados.ProdutoDoFornecedorAbstract;
 
 import java.util.*;
 
@@ -115,8 +115,16 @@ public class Fornecedor implements Comparable<Fornecedor>{
     public String toString() {
         return nome + " - " + email + " - " + telefone;
     }
-  
-    /**
+
+	/**
+	 * Criado para retornar o mapa de lista de produtos
+	 * @return o mapa de produtos do fornecedor.
+	 */
+	public HashMap<IdentificadorProdutoECombo, ProdutoDoFornecedorAbstract> getListaDeProdutos() {
+		return listaDeProdutos;
+	}
+
+	/**
      * Criado para cadastrar um produto em um fornecedor
      * 
      * @param nome String com o nome do produto
@@ -305,7 +313,6 @@ public class Fornecedor implements Comparable<Fornecedor>{
 
 		Combo c = new Combo(nome, descricao, true, fator, produtosCadastro);
 		this.listaDeProdutos.put(id, c);
-        System.out.println(this.listaDeProdutos.get(id));
 		return id;
 	}
 

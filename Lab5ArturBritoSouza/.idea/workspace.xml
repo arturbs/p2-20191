@@ -2,11 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37d5275e-4cac-4434-aff3-98c7e7faa076" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/SAGA/Conta/Compra.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SAGA/Conta/Conta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SAGA/Conta/ControllerConta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SAGA/Conta/IdentificadorConta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SAGA/SAGAController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Diagram.ucls" beforeDir="false" afterPath="$PROJECT_DIR$/Diagram.ucls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5ArturBritoSouza/SAGA/Cliente/Conta.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5ArturBritoSouza/SAGA/Cliente/Conta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5ArturBritoSouza/SAGA/Cliente/ControllerCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5ArturBritoSouza/SAGA/Cliente/ControllerCliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5ArturBritoSouza/SAGA/Combo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5ArturBritoSouza/SAGA/Facade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5ArturBritoSouza/SAGA/Facade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5ArturBritoSouza/SAGA/Fornecedor/ControllerFornecedor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5ArturBritoSouza/SAGA/Fornecedor/ControllerFornecedor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5ArturBritoSouza/SAGA/Fornecedor/Fornecedor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5ArturBritoSouza/SAGA/Fornecedor/Fornecedor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5ArturBritoSouza/SAGA/IdentificadorProdutoECombo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5ArturBritoSouza/SAGA/Produto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5ArturBritoSouza/SAGA/ProdutoDoFornecedorAbstract.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SAGA/Cliente/Conta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SAGA/Cliente/ControllerCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SAGA/Cliente/ControllerCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SAGA/Combo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SAGA/ProdutosEDerivados/Combo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SAGA/Facade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SAGA/Facade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SAGA/Fornecedor/ControllerFornecedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SAGA/Fornecedor/ControllerFornecedor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SAGA/Fornecedor/Fornecedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SAGA/Fornecedor/Fornecedor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SAGA/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SAGA/Produto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SAGA/ProdutoDoFornecedorAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SAGA/ProdutoDoFornecedorAbstract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SAGA/IdentificadorProdutoECombo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SAGA/ProdutosEDerivados/IdentificadorProdutoECombo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SAGA/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SAGA/ProdutosEDerivados/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SAGA/ProdutoDoFornecedorAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SAGA/ProdutosEDerivados/ProdutoDoFornecedorAbstract.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,75 +43,91 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SAGA/Facade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1462">
-              <caret line="104" selection-start-line="104" selection-end-line="104" />
+            <state relative-caret-position="306">
+              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SAGA/Fornecedor/ControllerFornecedor.java">
+        <entry file="file://$PROJECT_DIR$/src/SAGA/SAGAController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="341" column="60" selection-start-line="341" selection-start-column="60" selection-end-line="341" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/SAGA/Fornecedor/Fornecedor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="321" column="24" selection-start-line="321" selection-start-column="24" selection-end-line="321" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SAGA/IdentificadorProdutoECombo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SAGA/Produto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_5.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-697">
-              <caret line="13" column="126" selection-start-line="13" selection-start-column="124" selection-end-line="13" selection-end-column="212" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SAGA/ProdutoDoFornecedorAbstract.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+            <state relative-caret-position="1734">
+              <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
               <folding>
-                <element signature="e#1800#1801#0" expanded="true" />
-                <element signature="e#1828#1829#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SAGA/Combo.java">
+        <entry file="file://$PROJECT_DIR$/src/SAGA/Conta/ControllerConta.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4">
+            <state relative-caret-position="68">
               <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SAGA/Conta/Conta.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SAGA/Conta/Compra.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/SAGA/Conta/IdentificadorConta.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_6.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1241">
+              <caret line="73" column="13" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SAGA/Cliente/ControllerCliente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#557#558#0" expanded="true" />
+                <element signature="e#604#605#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SAGA/Cliente/Cliente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="816">
+              <caret line="48" column="53" selection-start-line="48" selection-start-column="53" selection-end-line="52" selection-end-column="126" />
             </state>
           </provider>
         </entry>
@@ -136,20 +172,24 @@
         <option value="$PROJECT_DIR$/acceptance_test/use_case_5.txt" />
         <option value="$PROJECT_DIR$/acceptance_test/use_case_6.txt" />
         <option value="$PROJECT_DIR$/src/Util/Util.java" />
-        <option value="$PROJECT_DIR$/src/SAGA/Cliente/Cliente.java" />
         <option value="$PROJECT_DIR$/acceptance_test/use_case_1.txt" />
         <option value="$PROJECT_DIR$/src/SAGA/ProdutoDoFornecedor.java" />
-        <option value="$PROJECT_DIR$/src/SAGA/Cliente/Conta.java" />
-        <option value="$PROJECT_DIR$/src/util/Validador.java" />
-        <option value="$PROJECT_DIR$/src/SAGA/Cliente/ControllerCliente.java" />
-        <option value="$PROJECT_DIR$/src/SAGA/Facade.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/SAGA/Combo.java" />
         <option value="$PROJECT_DIR$/src/SAGA/IdentificadorProdutoECombo.java" />
         <option value="$PROJECT_DIR$/src/SAGA/Produto.java" />
         <option value="$PROJECT_DIR$/src/SAGA/ProdutoDoFornecedorAbstract.java" />
-        <option value="$PROJECT_DIR$/src/SAGA/Fornecedor/ControllerFornecedor.java" />
+        <option value="$PROJECT_DIR$/src/util/Validador.java" />
+        <option value="$PROJECT_DIR$/src/SAGA/Cliente/Cliente.java" />
         <option value="$PROJECT_DIR$/src/SAGA/Fornecedor/Fornecedor.java" />
+        <option value="$PROJECT_DIR$/src/SAGA/Fornecedor/ControllerFornecedor.java" />
+        <option value="$PROJECT_DIR$/src/SAGA/Cliente/ControllerCliente.java" />
+        <option value="$PROJECT_DIR$/src/SAGA/SAGAController.java" />
+        <option value="$PROJECT_DIR$/src/SAGA/Facade.java" />
+        <option value="$PROJECT_DIR$/src/SAGA/Compra.java" />
+        <option value="$PROJECT_DIR$/src/SAGA/Cliente/Conta.java" />
+        <option value="$PROJECT_DIR$/src/SAGA/ControllerConta.java" />
+        <option value="$PROJECT_DIR$/src/SAGA/Conta/ControllerConta.java" />
       </list>
     </option>
   </component>
@@ -171,7 +211,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -184,10 +223,36 @@
               <item name="Lab5ArturBritoSouza" type="462c0819:PsiDirectoryNode" />
               <item name="acceptance_test" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Lab5ArturBritoSouza" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab5ArturBritoSouza" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab5ArturBritoSouza" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab5ArturBritoSouza" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="SAGA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab5ArturBritoSouza" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab5ArturBritoSouza" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="SAGA" type="462c0819:PsiDirectoryNode" />
+              <item name="Cliente" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab5ArturBritoSouza" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab5ArturBritoSouza" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="SAGA" type="462c0819:PsiDirectoryNode" />
+              <item name="Fornecedor" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -227,7 +292,7 @@
       <module name="Lab5ArturBritoSouza" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="SAGA.Cliente.*" />
+          <option name="PATTERN" value="SAGA.Conta.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -270,7 +335,7 @@
     <frame x="-8" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24206349" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24206349" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -279,7 +344,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32872504" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30568355" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30568355" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -348,7 +413,6 @@
     <entry file="jar://$PROJECT_DIR$/easyaccept.jar!/easyaccept/script/ExpectProcessor.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_7.txt" />
     <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_8.txt" />
     <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_4.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -371,34 +435,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SAGA/Cliente/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="43" column="107" selection-start-line="43" selection-start-column="107" selection-end-line="43" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SAGA/Cliente/Conta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SAGA/Cliente/ControllerCliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-106">
-          <caret line="157" column="26" selection-start-line="157" selection-start-column="26" selection-end-line="157" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_6.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_3.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="801">
@@ -406,71 +442,156 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/Validador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/SAGA/Combo.java">
+    <entry file="file://$PROJECT_DIR$/src/SAGA/ProdutosEDerivados/Combo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
+        <state relative-caret-position="68">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SAGA/Produto.java">
+    <entry file="file://$PROJECT_DIR$/src/SAGA/ProdutosEDerivados/IdentificadorProdutoECombo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="-7">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SAGA/ProdutoDoFornecedorAbstract.java">
+    <entry file="file://$PROJECT_DIR$/src/SAGA/ProdutosEDerivados/ProdutoDoFornecedorAbstract.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+        <state relative-caret-position="170">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SAGA/ProdutosEDerivados/Produto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/Testes/ControllerFornecedorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1224">
           <folding>
-            <element signature="e#1800#1801#0" expanded="true" />
-            <element signature="e#1828#1829#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SAGA/Facade.java">
+    <entry file="file://$PROJECT_DIR$/testes/Testes/FacadeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1462">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
+        <state relative-caret-position="-783">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_5.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-697">
+        <state relative-caret-position="-901">
           <caret line="13" column="126" selection-start-line="13" selection-start-column="124" selection-end-line="13" selection-end-column="212" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SAGA/IdentificadorProdutoECombo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SAGA/Fornecedor/ControllerFornecedor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="341" column="60" selection-start-line="341" selection-start-column="60" selection-end-line="341" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SAGA/Fornecedor/Fornecedor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="321" column="24" selection-start-line="321" selection-start-column="24" selection-end-line="321" selection-end-column="24" />
+        <state relative-caret-position="-1126">
+          <caret line="135" column="116" lean-forward="true" selection-start-line="135" selection-start-column="8" selection-end-line="135" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/Validador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_7.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SAGA/Fornecedor/ControllerFornecedor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="33" column="4" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="36" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SAGA/Facade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SAGA/SAGAController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1734">
+          <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_6.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="73" column="13" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SAGA/Cliente/ControllerCliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SAGA/Cliente/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" column="53" selection-start-line="48" selection-start-column="53" selection-end-line="52" selection-end-column="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SAGA/Conta/ControllerConta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SAGA/Conta/Conta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SAGA/Conta/Compra.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SAGA/Conta/IdentificadorConta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
         </state>
       </provider>
     </entry>

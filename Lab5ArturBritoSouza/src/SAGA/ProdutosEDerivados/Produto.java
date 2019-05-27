@@ -1,4 +1,4 @@
-package SAGA;
+package SAGA.ProdutosEDerivados;
 
 public class Produto extends ProdutoDoFornecedorAbstract {
 

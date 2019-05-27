@@ -1,5 +1,8 @@
 package SAGA.Fornecedor;
 
+import SAGA.ProdutosEDerivados.IdentificadorProdutoECombo;
+import SAGA.ProdutosEDerivados.ProdutoDoFornecedorAbstract;
+
 import javax.rmi.CORBA.Util;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,6 +29,21 @@ public class ControllerFornecedor {
      */
     public  ControllerFornecedor(){
         this.fornecedores = new HashMap<>();
+    }
+
+    /**
+     * Criado para retornar o mapa de fornecedores
+     * @return o mapa.
+     */
+    public HashMap<String, Fornecedor> getFornecedores() {
+        return fornecedores;
+    }
+    /**
+     * Criado para retornar o mapa de produtos do fornecedor.
+     * @return o mapa.
+     */
+    public HashMap<IdentificadorProdutoECombo, ProdutoDoFornecedorAbstract> getListaDeProdutos(String fornecedor) {
+        return this.fornecedores.get(fornecedor).getListaDeProdutos();
     }
 
 
@@ -342,4 +360,6 @@ public class ControllerFornecedor {
         return this.fornecedores.get(Fornecedor).editaCombo(nome, descricao, novoFator);
 
     }
+
+
 }

@@ -1,4 +1,4 @@
-package SAGA;
+package SAGA.ProdutosEDerivados;
 
 /**
  * Classe criada para Representar um identificador do Produto, que sera usado como identificador unico do produto
