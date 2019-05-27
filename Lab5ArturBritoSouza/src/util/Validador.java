@@ -13,6 +13,12 @@ public class Validador {
         }
     }
 
+    public static void validaStringNullEVazia(String parametro, String mensagem){
+        if (parametro == null || parametro.trim().equals("")){
+            throw  new IllegalArgumentException(mensagem);
+        }
+    }
+
     public  static void validaTamanhoString(String parametro, int tamanhoMinimoAceitavel, int tamanhoMaximoAceitavel, String mensagem ) {
         if (parametro.length() < tamanhoMinimoAceitavel || parametro.length() > tamanhoMaximoAceitavel){
             throw new IllegalArgumentException(mensagem);

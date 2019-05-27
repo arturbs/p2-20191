@@ -38,7 +38,18 @@ public class Conta {
         return Objects.hash(cpf, nomeFornecedor);
     }
 
-    public void cadastraCompra (String data, IdentificadorProdutoECombo id, double preco){
+    public void cadastraCompra (String data, String produto, double preco){
+        Compra compra = new Compra(data, produto,preco);
+        compras.add(compra);
+        System.out.println(compras);
+    }
 
+    public double getDebito(){
+        double debitoTotal = 0;
+
+        for (Compra listaDeCompras: this.compras){
+            debitoTotal += listaDeCompras.getPreco();
+        }
+        return debitoTotal;
     }
 }

@@ -40,18 +40,13 @@ public class Cliente implements Comparable<Cliente> {
      */
     public Cliente (String cpf, String nome, String email, String localizacao){
 
-        util.Validador.validaStringNull(cpf, "Erro no cadastro do cliente: cpf nao pode ser vazio ou nulo." );
-        util.Validador.validaStringVazia(cpf, "Erro no cadastro do cliente: cpf nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(cpf, "Erro no cadastro do cliente: cpf nao pode ser vazio ou nulo." );
         if ((cpf.length() != 11)){
             throw new IllegalArgumentException("Erro no cadastro do cliente: cpf invalido.");
         }
-        util.Validador.validaStringNull(nome, "Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(nome, "Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(email, "Erro no cadastro do cliente: email nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(email, "Erro no cadastro do cliente: email nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(localizacao, "Erro no cadastro do cliente: localizacao nao pode ser vazia ou nula.");
-        util.Validador.validaStringVazia(localizacao, "Erro no cadastro do cliente: localizacao nao pode ser vazia ou nula.");
-
+        util.Validador.validaStringNullEVazia(nome, "Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(email, "Erro no cadastro do cliente: email nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(localizacao, "Erro no cadastro do cliente: localizacao nao pode ser vazia ou nula.");
 
         this.cpf = cpf;
         this.email = email;
@@ -83,8 +78,7 @@ public class Cliente implements Comparable<Cliente> {
      * @param String com o novo nome do Cliente.
      */
     public void setNome(String nome) {
-        util.Validador.validaStringNull(nome,"Erro na edicao do cliente: nome nao pode ser nulo" );
-        util.Validador.validaStringVazia(nome, "Erro na edicao do cliente: nome nao pode ser nulo");
+        util.Validador.validaStringNullEVazia(nome,"Erro na edicao do cliente: nome nao pode ser nulo" );
         this.nome = nome;
     }
 
@@ -93,8 +87,7 @@ public class Cliente implements Comparable<Cliente> {
      * @param String com o novo email do Cliente.
      */
     public void setEmail(String email) {
-        util.Validador.validaStringNull(email,"Erro na edicao do cliente: email nao pode ser nulo" );
-    	util.Validador.validaStringVazia(email, "Erro na edicao do cliente: email nao pode ser vazio");
+        util.Validador.validaStringNullEVazia(email,"Erro na edicao do cliente: email nao pode ser nulo" );
         this.email = email;
     }
 
@@ -103,9 +96,7 @@ public class Cliente implements Comparable<Cliente> {
      * @param String com a nova localizacao do Cliente.
      */
     public void setLocalizacao(String localizacao) {
-        util.Validador.validaStringNull(localizacao,"Erro na edicao do cliente: localizacao nao pode ser nulo");
-        util.Validador.validaStringVazia(localizacao,"Erro na edicao do cliente: localizacao nao pode ser vazio" );
-
+        util.Validador.validaStringNullEVazia(localizacao,"Erro na edicao do cliente: localizacao nao pode ser nulo");
         this.localizacao = localizacao;
     }
 

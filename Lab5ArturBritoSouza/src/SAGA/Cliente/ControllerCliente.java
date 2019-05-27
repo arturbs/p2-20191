@@ -42,15 +42,11 @@ public class ControllerCliente {
      */
     public String cadastraCliente(String cpf, String nome, String email, String localizacao){
 
-        util.Validador.validaStringNull(cpf, "Erro no cadastro do cliente: cpf nao pode ser vazio ou nulo." );
-        util.Validador.validaStringVazia(cpf, "Erro no cadastro do cliente: cpf nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(cpf, "Erro no cadastro do cliente: cpf nao pode ser vazio ou nulo." );
         util.Validador.validaTamanhoString(cpf, 11, 11, "Erro no cadastro do cliente: cpf invalido." );
-        util.Validador.validaStringNull(nome, "Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(nome, "Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(email, "Erro no cadastro do cliente: email nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(email, "Erro no cadastro do cliente: email nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(localizacao, "Erro no cadastro do cliente: localizacao nao pode ser vazia ou nula.");
-        util.Validador.validaStringVazia(localizacao, "Erro no cadastro do cliente: localizacao nao pode ser vazia ou nula.");
+        util.Validador.validaStringNullEVazia(nome, "Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(email, "Erro no cadastro do cliente: email nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(localizacao, "Erro no cadastro do cliente: localizacao nao pode ser vazia ou nula.");
         if (this.clientes.containsKey(cpf)) {
             throw new IllegalArgumentException("Erro no cadastro do cliente: cliente ja existe.");
         }
@@ -69,8 +65,7 @@ public class ControllerCliente {
 
         String saida = "";
 
-        util.Validador.validaStringNull(cpf,"Erro na exibicao do cliente: cpf nao pode ser vazio ou nulo." );
-        util.Validador.validaStringVazia(cpf, "Erro na exibicao do cliente: cpf nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(cpf,"Erro na exibicao do cliente: cpf nao pode ser vazio ou nulo." );
         if (this.clientes.containsKey(cpf)){
             saida = this.clientes.get(cpf).toString();
         }
@@ -110,12 +105,9 @@ public class ControllerCliente {
      */
     public String editaCadastro (String cpf, String informacao, String alteracao){
 
-        util.Validador.validaStringNull(alteracao, "Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(alteracao,"Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(informacao, "Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(informacao,"Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(cpf, "Erro na edicao do cliente: cpf nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(cpf,"Erro na edicao do cliente: cpf nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(alteracao, "Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(informacao, "Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(cpf, "Erro na edicao do cliente: cpf nao pode ser vazio ou nulo.");
 
         if (informacao.toLowerCase().trim().equals("cpf")){
             throw new IllegalArgumentException("Erro na edicao do cliente: cpf nao pode ser editado.");
@@ -148,8 +140,7 @@ public class ControllerCliente {
      */
     public String RemoveClienteDoCadastro(String cpf){
 
-        util.Validador.validaStringNull(cpf, "Erro na remocao do cliente: cpf nao pode ser vazio ou nulo");
-        util.Validador.validaStringVazia(cpf,"Erro na remocao do cliente: cpf nao pode ser vazio ou nulo" );
+        util.Validador.validaStringNullEVazia(cpf, "Erro na remocao do cliente: cpf nao pode ser vazio ou nulo");
         if (!this.clientes.containsKey(cpf)) {
             throw new IllegalArgumentException("Erro na remocao do cliente: cliente nao existe.");
         }
@@ -161,6 +152,5 @@ public class ControllerCliente {
         }
         return saida;
     }
-
 
 }

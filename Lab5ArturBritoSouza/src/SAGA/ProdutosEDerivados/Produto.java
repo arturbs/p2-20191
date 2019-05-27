@@ -1,5 +1,12 @@
 package SAGA.ProdutosEDerivados;
 
+/**
+ * Classe criada para Representar um Produto do Fornecedor.
+ * Um Produto do Fornecedor e representado por um Nome, descricao e preco. O mesmo e
+ * identificado unicamente pelo seu id, que e gerado a partir do seu nome e sua descricao.
+ *
+ * @author Artur Brito Souza - UFCG
+ */
 public class Produto extends ProdutoDoFornecedorAbstract {
 
     private double preco;

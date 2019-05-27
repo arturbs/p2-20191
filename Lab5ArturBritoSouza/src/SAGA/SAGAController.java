@@ -97,43 +97,38 @@ public class SAGAController {
     //Compras
     public void adicionaCompra(String cpf, String fornecedor, String data, String nome_prod, String desc_prod){
 
-        util.Validador.validaStringNull(cpf, "Erro ao cadastrar compra: cpf nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(cpf,"Erro ao cadastrar compra: cpf nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(cpf, "Erro ao cadastrar compra: cpf nao pode ser vazio ou nulo.");
         util.Validador.validaTamanhoString(cpf, 11, 11, "Erro ao cadastrar compra: cpf invalido.");
-        util.Validador.validaStringNull(data, "Erro ao cadastrar compra: data nao pode ser vazia ou nula.");
-        util.Validador.validaStringVazia(data,"Erro ao cadastrar compra: data nao pode ser vazia ou nula.");
+        util.Validador.validaStringNullEVazia(data, "Erro ao cadastrar compra: data nao pode ser vazia ou nula.");
         util.Validador.validaTamanhoString(data, 10, 10, "Erro ao cadastrar compra: data invalida.");
         if (!this.clientes.getClientes().containsKey(cpf)) {
             throw new IllegalArgumentException("Erro ao cadastrar compra: cliente nao existe.");
         }
-        util.Validador.validaStringNull(fornecedor, "Erro ao cadastrar compra: fornecedor nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(fornecedor,"Erro ao cadastrar compra: fornecedor nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(fornecedor, "Erro ao cadastrar compra: fornecedor nao pode ser vazio ou nulo.");
         if(!this.fornecedores.getFornecedores().containsKey(fornecedor)){
             throw new IllegalArgumentException("Erro ao cadastrar compra: fornecedor nao existe.");
         }
-        util.Validador.validaStringNull(nome_prod, "Erro ao cadastrar compra: nome do produto nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(nome_prod,"Erro ao cadastrar compra: nome do produto nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(desc_prod, "Erro ao cadastrar compra: descricao do produto nao pode ser vazia ou nula.");
-        util.Validador.validaStringVazia(desc_prod,"Erro ao cadastrar compra: descricao do produto nao pode ser vazia ou nula.");
+        util.Validador.validaStringNullEVazia(nome_prod, "Erro ao cadastrar compra: nome do produto nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(desc_prod, "Erro ao cadastrar compra: descricao do produto nao pode ser vazia ou nula.");
         IdentificadorProdutoECombo id = new IdentificadorProdutoECombo(nome_prod.toLowerCase(), desc_prod.toLowerCase());
         if (!this.fornecedores.getListaDeProdutos(fornecedor).containsKey(id)){
             throw new IllegalArgumentException("Erro ao cadastrar compra: produto nao existe.");
         }
 
         IdentificadorProdutoECombo identificador = new IdentificadorProdutoECombo(nome_prod.toLowerCase(), desc_prod.toLowerCase());
-        this.fornecedores
+        double preco = this.fornecedores.getPreco(fornecedor, identificador);
+        System.out.println(preco);
         this.contas.cadastraCompra(cpf, fornecedor, data, nome_prod, preco);
     }
 
-    public String getDebito (String cpf, String fornecedor){
-        util.Validador.validaStringNull(cpf, "Erro ao recuperar debito: cpf nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(cpf,"Erro ao recuperar debito: cpf nao pode ser vazio ou nulo.");
+    public double getDebito (String cpf, String fornecedor){
+        util.Validador.validaStringNullEVazia(cpf, "Erro ao recuperar debito: cpf nao pode ser vazio ou nulo.");
         if (!this.clientes.getClientes().containsKey(cpf)) {
             throw new IllegalArgumentException("Erro ao recuperar debito: cliente nao existe.");
         }
+
         util.Validador.validaTamanhoString(cpf, 11, 11, "Erro ao recuperar debito: cpf invalido.");
-        util.Validador.validaStringNull(fornecedor, "Erro ao recuperar debito: fornecedor nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(fornecedor,"Erro ao recuperar debito: fornecedor nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(fornecedor, "Erro ao recuperar debito: fornecedor nao pode ser vazio ou nulo.");
         if(!this.fornecedores.getFornecedores().containsKey(fornecedor)){
             throw new IllegalArgumentException("Erro ao recuperar debito: fornecedor nao existe.");
         }
@@ -141,29 +136,28 @@ public class SAGAController {
     }
 
     public String exibeContas (String cpf, String fornecedor){
-        util.Validador.validaStringNull(cpf, "Erro ao exibir conta do cliente: cpf nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(cpf,"Erro ao exibir conta do cliente: cpf nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(cpf, "Erro ao exibir conta do cliente: cpf nao pode ser vazio ou nulo.");
         if (!this.clientes.getClientes().containsKey(cpf)) {
             throw new IllegalArgumentException("Erro ao exibir conta do cliente: cliente nao existe.");
         }
         util.Validador.validaTamanhoString(cpf, 11, 11, "Erro ao exibir conta do cliente: cpf invalido.");
-        util.Validador.validaStringNull(fornecedor, "Erro ao exibir conta do cliente: fornecedor nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(fornecedor,"Erro ao exibir conta do cliente: fornecedor nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(fornecedor, "Erro ao exibir conta do cliente: fornecedor nao pode ser vazio ou nulo.");
         if(!this.fornecedores.getFornecedores().containsKey(fornecedor)){
             throw new IllegalArgumentException("Erro ao exibir conta do cliente: fornecedor nao existe.");
         }
-        return this.contas.mostraDebito(cpf, fornecedor);
+        String saida = "";
+        return saida;
     }
 
     public String exibeContasClientes(String cpf) {
-        util.Validador.validaStringNull(cpf, "Erro ao exibir contas do cliente: cpf nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(cpf,"Erro ao exibir contas do cliente: cpf nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(cpf, "Erro ao exibir contas do cliente: cpf nao pode ser vazio ou nulo.");
         if (!this.clientes.getClientes().containsKey(cpf)) {
             throw new IllegalArgumentException("Erro ao exibir contas do cliente: cliente nao existe.");
         }
         util.Validador.validaTamanhoString(cpf, 11, 11, "Erro ao exibir contas do cliente: cpf invalido.");
 
-        return this.contas.mostraDebito(cpf, cpf);
+        String saida = "";
+        return saida;
     }
 
 }

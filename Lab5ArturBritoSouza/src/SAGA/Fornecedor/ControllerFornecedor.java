@@ -56,12 +56,9 @@ public class ControllerFornecedor {
      * @return String com cpf do cliente cadastrado.
      */
     public String cadastraFornecedor(String nome, String email, String telefone){
-        util.Validador.validaStringNull(nome, "Erro no cadastro do fornecedor: nome nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(nome, "Erro no cadastro do fornecedor: nome nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(email, "Erro no cadastro do fornecedor: email nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(email, "Erro no cadastro do fornecedor: email nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(telefone, "Erro no cadastro do fornecedor: telefone nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(telefone, "Erro no cadastro do fornecedor: telefone nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(nome, "Erro no cadastro do fornecedor: nome nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(email, "Erro no cadastro do fornecedor: email nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(telefone, "Erro no cadastro do fornecedor: telefone nao pode ser vazio ou nulo.");
 
         if (this.fornecedores.containsKey(nome)){
             throw new IllegalArgumentException("Erro no cadastro de fornecedor: fornecedor ja existe.");
@@ -123,12 +120,9 @@ public class ControllerFornecedor {
      */
     public String editaFornecedor (String nome, String informacao, String alteracao){
 
-        util.Validador.validaStringNull(informacao,"Erro na edicao do fornecedor: atributo nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(informacao, "Erro na edicao do fornecedor: atributo nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(alteracao,"Erro na edicao do fornecedor: novo valor nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(alteracao, "Erro na edicao do fornecedor: novo valor nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(nome,"Erro na edicao do fornecedor: nome nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(nome, "Erro na edicao do fornecedor: nome nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(informacao,"Erro na edicao do fornecedor: atributo nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(alteracao,"Erro na edicao do fornecedor: novo valor nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(nome,"Erro na edicao do fornecedor: nome nao pode ser vazio ou nulo.");
         if (informacao.trim().equals("nome")){
 			throw new IllegalArgumentException("Erro na edicao do fornecedor: nome nao pode ser editado.");
 		}
@@ -184,12 +178,9 @@ public class ControllerFornecedor {
      * @return boolean true se o cadastro obter sucesso.
      */
     public void cadastraProduto(String nomeFornecedor, String nomeProduto, String descricao, double preco){
-        util.Validador.validaStringNull(nomeFornecedor, "Erro no cadastro de produto: fornecedor nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(nomeFornecedor, "Erro no cadastro de produto: fornecedor nao pode ser vazio ou nulo.");
-		util.Validador.validaStringNull(nomeProduto, "Erro no cadastro de produto: nome nao pode ser vazio ou nulo.");
-		util.Validador.validaStringVazia(nomeProduto, "Erro no cadastro de produto: nome nao pode ser vazio ou nulo.");
-		util.Validador.validaStringNull(descricao, "Erro no cadastro de produto: descricao nao pode ser vazia ou nula.");
-		util.Validador.validaStringVazia(descricao, "Erro no cadastro de produto: descricao nao pode ser vazia ou nula.");
+        util.Validador.validaStringNullEVazia(nomeFornecedor, "Erro no cadastro de produto: fornecedor nao pode ser vazio ou nulo.");
+		util.Validador.validaStringNullEVazia(nomeProduto, "Erro no cadastro de produto: nome nao pode ser vazio ou nulo.");
+		util.Validador.validaStringNullEVazia(descricao, "Erro no cadastro de produto: descricao nao pode ser vazia ou nula.");
 
 		if (preco < 0) {
 			throw new IllegalArgumentException("Erro no cadastro de produto: preco invalido.");
@@ -212,12 +203,9 @@ public class ControllerFornecedor {
      */
     public String encontraProduto (String nomeProduto, String descricao, String nomeFornecedor) {
 
-        util.Validador.validaStringNull(nomeProduto,"Erro na exibicao de produto: nome nao pode ser vazio ou nulo." );
-		util.Validador.validaStringVazia(nomeProduto, "Erro na exibicao de produto: nome nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(descricao,"Erro na exibicao de produto: descricao nao pode ser vazia ou nula." );
-        util.Validador.validaStringVazia(descricao, "Erro na exibicao de produto: descricao nao pode ser vazia ou nula.");
-        util.Validador.validaStringNull(nomeFornecedor,"Erro na exibicao de produto: fornecedor nao pode ser vazio ou nulo." );
-        util.Validador.validaStringVazia(nomeFornecedor, "Erro na exibicao de produto: fornecedor nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(nomeProduto,"Erro na exibicao de produto: nome nao pode ser vazio ou nulo." );
+        util.Validador.validaStringNullEVazia(descricao,"Erro na exibicao de produto: descricao nao pode ser vazia ou nula." );
+        util.Validador.validaStringNullEVazia(nomeFornecedor,"Erro na exibicao de produto: fornecedor nao pode ser vazio ou nulo." );
 
 		if (!fornecedores.containsKey(nomeFornecedor)){
 			throw new IllegalArgumentException("Erro na exibicao de produto: fornecedor nao existe.");
@@ -235,8 +223,7 @@ public class ControllerFornecedor {
     public String listaProdutosFornecedor (String nome) {
 
 
-        util.Validador.validaStringNull(nome,"Erro na exibicao de produto: fornecedor nao pode ser vazio ou nulo." );
-        util.Validador.validaStringVazia(nome, "Erro na exibicao de produto: fornecedor nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(nome,"Erro na exibicao de produto: fornecedor nao pode ser vazio ou nulo." );
     	if (!this.fornecedores.containsKey(nome)){
 			throw new IllegalArgumentException("Erro na exibicao de produto: fornecedor nao existe.");
 		}
@@ -245,9 +232,6 @@ public class ControllerFornecedor {
  
     /**
      * Criado para retornar a representacao dos produtos de todos fornecedor especifico.
-     * obs: Nao ordenada
-     *
-
      * @return String com representacao dos produtos de todos os fornecedores cadastrados.
      */
     public String listarProdutosDeTodosOsFornecedores () {
@@ -279,12 +263,9 @@ public class ControllerFornecedor {
     
     public String editaProduto(String nomeProduto, String descricao, String nomeFornecedor, double novoPreco) {
 
-        util.Validador.validaStringNull(nomeFornecedor, "Erro na edicao de produto: fornecedor nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(nomeFornecedor, "Erro na edicao de produto: fornecedor nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(nomeProduto, "Erro na edicao de produto: nome nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(nomeProduto, "Erro na edicao de produto: nome nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(descricao, "Erro na edicao de produto: descricao nao pode ser vazia ou nula.");
-        util.Validador.validaStringVazia(descricao, "Erro na edicao de produto: descricao nao pode ser vazia ou nula.");
+        util.Validador.validaStringNullEVazia(nomeFornecedor, "Erro na edicao de produto: fornecedor nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(nomeProduto, "Erro na edicao de produto: nome nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(descricao, "Erro na edicao de produto: descricao nao pode ser vazia ou nula.");
 
     	if (novoPreco < 0) {
     		throw new IllegalArgumentException("Erro na edicao de produto: preco invalido.");
@@ -307,12 +288,9 @@ public class ControllerFornecedor {
      */
     public String removeProduto (String nomeProduto, String descricao, String nomeFornecedor) {
 
-        util.Validador.validaStringNull(nomeFornecedor, "Erro na remocao de produto: fornecedor nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(nomeFornecedor, "Erro na remocao de produto: fornecedor nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(nomeProduto, "Erro na remocao de produto: nome nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(nomeProduto, "Erro na remocao de produto: nome nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(descricao, "Erro na remocao de produto: descricao nao pode ser vazia ou nula.");
-        util.Validador.validaStringVazia(descricao, "Erro na remocao de produto: descricao nao pode ser vazia ou nula.");
+        util.Validador.validaStringNullEVazia(nomeFornecedor, "Erro na remocao de produto: fornecedor nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(nomeProduto, "Erro na remocao de produto: nome nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(descricao, "Erro na remocao de produto: descricao nao pode ser vazia ou nula.");
 
 		if (!fornecedores.containsKey(nomeFornecedor)){
 			throw new NullPointerException("Erro na remocao de produto: fornecedor nao existe.");
@@ -321,15 +299,18 @@ public class ControllerFornecedor {
     	return this.fornecedores.get(nomeFornecedor).removeProduto(nomeProduto, descricao);
     }
 
+    /**
+     * Criado para cadastrar um combo.
+     *
+     * @param nomeCombo String com o nome do combo que sera cadastrado.
+     * @param descricao String com descricao do combo que sera cadastrado.
+     * @param nomeFornecedor String com o nome do fornecedor ao qual o combo sera cadastrado.
+     */
     public void cadastraCombo(String nomeFornecedor, String nomeCombo, String descricao, double fator, String produtos){
-        util.Validador.validaStringNull(nomeFornecedor, "Erro no cadastro de combo: fornecedor nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(nomeFornecedor, "Erro no cadastro de combo: fornecedor nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(nomeCombo, "Erro no cadastro de combo: nome nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(nomeCombo, "Erro no cadastro de combo: nome nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(descricao, "Erro no cadastro de combo: descricao nao pode ser vazia ou nula.");
-        util.Validador.validaStringVazia(descricao, "Erro no cadastro de combo: descricao nao pode ser vazia ou nula.");
-        util.Validador.validaStringNull(produtos, "Erro no cadastro de combo: combo deve ter produtos.");
-        util.Validador.validaStringVazia(produtos, "Erro no cadastro de combo: combo deve ter produtos.");
+        util.Validador.validaStringNullEVazia(nomeFornecedor, "Erro no cadastro de combo: fornecedor nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(nomeCombo, "Erro no cadastro de combo: nome nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(descricao, "Erro no cadastro de combo: descricao nao pode ser vazia ou nula.");
+        util.Validador.validaStringNullEVazia(produtos, "Erro no cadastro de combo: combo deve ter produtos.");
         if (fator <= 0 || fator >= 1) {
             throw new IllegalArgumentException("Erro no cadastro de combo: fator invalido.");
         }
@@ -340,14 +321,18 @@ public class ControllerFornecedor {
         fornecedores.get(nomeFornecedor).cadastraCombo(nomeCombo, descricao, fator, produtos);
     }
 
+    /**
+     * Criado para editar um combo.
+     *
+     * @param nome String com o nome do combo que sera editado.
+     * @param descricao String com descricao do combo que sera editado
+     * @param Fornecedor String com o nome do fornecedor ao qual tera o combo editado
+     */
     public String editaCombo(String nome, String descricao, String Fornecedor, double novoFator) {
 
-        util.Validador.validaStringNull(Fornecedor, "Erro na edicao de combo: fornecedor nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(Fornecedor, "Erro na edicao de combo: fornecedor nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(nome, "Erro na edicao de combo: nome nao pode ser vazio ou nulo.");
-        util.Validador.validaStringVazia(nome, "Erro na edicao de combo: nome nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNull(descricao, "Erro na edicao de combo: descricao nao pode ser vazia ou nula.");
-        util.Validador.validaStringVazia(descricao, "Erro na edicao de combo: descricao nao pode ser vazia ou nula.");
+        util.Validador.validaStringNullEVazia(Fornecedor, "Erro na edicao de combo: fornecedor nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(nome, "Erro na edicao de combo: nome nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(descricao, "Erro na edicao de combo: descricao nao pode ser vazia ou nula.");
 
 
         if (novoFator < 0) {
@@ -361,9 +346,13 @@ public class ControllerFornecedor {
 
     }
 
-    public double getPreco (IdentificadorProdutoECombo identificador){
-        fornecedores.get();
+    /**
+     * Criado para retornar o preco do produto ou combo.
+     *
+     * @param fornecedor String com o nome do fornecedor ao o produto ou combo pertence.
+     * @param identificador IdentificadorProdutoECombo com a id do produto ou combo que desejasse saber o preco.
+     */
+    public double getPreco (String fornecedor,IdentificadorProdutoECombo identificador){
+        return fornecedores.get(fornecedor).getPreco(identificador);
     }
-
-
 }

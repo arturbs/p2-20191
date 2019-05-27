@@ -7,13 +7,17 @@ public class Compra {
 
     private String data;
 
-    private IdentificadorProdutoECombo id;
+    private String produto;
 
     private double preco;
 
-    public Compra(String data, IdentificadorProdutoECombo id, double preco) {
+    public Compra(String data, String produto, double preco) {
         this.data = data;
-        this.id = id;
+        this.produto = produto;
         this.preco = preco;
+    }
+
+    public double getPreco() {
+        return preco;
     }
 }

@@ -106,7 +106,7 @@ public class Facade {
 		this.controladorPrincipal.adicionaCompra(cpf, fornecedor, data, nome_prod, desc_prod);
 	}
 
-	public String getDebito (String cpf, String fornecedor) {
+	public double getDebito (String cpf, String fornecedor) {
 		return this.controladorPrincipal.getDebito(cpf, fornecedor);
 	}
 
