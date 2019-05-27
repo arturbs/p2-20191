@@ -361,5 +361,9 @@ public class ControllerFornecedor {
 
     }
 
+    public double getPreco (IdentificadorProdutoECombo identificador){
+        fornecedores.get();
+    }
+
 
 }

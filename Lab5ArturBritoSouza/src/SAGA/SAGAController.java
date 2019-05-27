@@ -119,7 +119,10 @@ public class SAGAController {
         if (!this.fornecedores.getListaDeProdutos(fornecedor).containsKey(id)){
             throw new IllegalArgumentException("Erro ao cadastrar compra: produto nao existe.");
         }
-        this.contas.cadastraCompra(cpf, fornecedor, data, nome_prod, desc_prod);
+
+        IdentificadorProdutoECombo identificador = new IdentificadorProdutoECombo(nome_prod.toLowerCase(), desc_prod.toLowerCase());
+        this.fornecedores
+        this.contas.cadastraCompra(cpf, fornecedor, data, nome_prod, preco);
     }
 
     public String getDebito (String cpf, String fornecedor){

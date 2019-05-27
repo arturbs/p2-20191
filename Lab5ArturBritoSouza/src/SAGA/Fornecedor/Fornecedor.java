@@ -334,4 +334,8 @@ public class Fornecedor implements Comparable<Fornecedor>{
 		}
 		return "Alteracao concluida";
 	}
+
+	public double getPreco (IdentificadorProdutoECombo identificador){
+		return listaDeProdutos.get(identificador).getPreco();
+	}
 }

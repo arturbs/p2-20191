@@ -5,18 +5,21 @@ import java.util.HashMap;
 public class ControllerConta {
 
 
-    private HashMap<String , Conta> contas;
+    private HashMap<IdentificadorConta , Conta> contas;
 
     public ControllerConta() {
         this.contas = new HashMap<>();
     }
 
 
-    public String cadastraCompra(String cpf, String fornecedor, String data, String nome_prod, String desc_prod) {
-        String saida = "";
+    public String cadastraCompra(String cpf, String fornecedor, String data, String nome_prod, double preco) {
+        IdentificadorConta  id = new IdentificadorConta(cpf.toLowerCase(), fornecedor.toLowerCase());
 
-        if ()
-        return cadastraCompra
+        if (!contas.containsKey(id)){
+
+        }
+        String saida = "";
+        return saida;
 
 
 

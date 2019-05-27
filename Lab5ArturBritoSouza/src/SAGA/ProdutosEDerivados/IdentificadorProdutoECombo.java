@@ -31,7 +31,7 @@ public class IdentificadorProdutoECombo {
 	}
 	
 	/**
-     * hashCde Baseado no nome e na descricao.
+     * Hashcode Baseado no nome e na descricao.
      */
 	@Override
 	public int hashCode() {
