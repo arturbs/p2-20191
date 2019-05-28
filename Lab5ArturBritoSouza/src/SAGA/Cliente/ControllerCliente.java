@@ -103,7 +103,7 @@ public class ControllerCliente {
      * @param alteracao novo valor o qual o atributo indicado sera substitituido.
      * @return String com a frase Altercao concluida
      */
-    public String editaCadastro (String cpf, String informacao, String alteracao){
+    public void editaCadastro (String cpf, String informacao, String alteracao){
 
         util.Validador.validaStringNullEVazia(alteracao, "Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.");
         util.Validador.validaStringNullEVazia(informacao, "Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.");
@@ -129,7 +129,7 @@ public class ControllerCliente {
             	this.clientes.get(cpf).setLocalizacao(alteracao);
             }
         }
-        return "Altercao concluida";
+
     }
 
     /**
@@ -155,5 +155,31 @@ public class ControllerCliente {
 
     public String getNomeCliente (String cpf){
         return clientes.get(cpf).getNome();
+    }
+
+    public void cadastraCompra (String cpf, String fornecedor, String data, String nomeProd, String descProd, double preco, String nomeCliente){
+
+        if (!this.clientes.containsKey(cpf)) {
+            throw new IllegalArgumentException("Erro ao cadastrar compra: cliente nao existe.");
+        }
+
+        clientes.get(cpf).cadastraCompra(fornecedor, data, nomeProd, descProd, preco, nomeCliente );
+
+    }
+
+    public double getValorDebito(String cpf, String fornecedor){
+        return clientes.get(cpf).valorDebito(fornecedor);
+    }
+
+    public String exibeContaEspecifica(String cpf, String fornecedor){
+
+        return clientes.get(cpf).getConta(fornecedor);
+    }
+
+    public String exibeContasCliente(String cpf){
+        if (clientes.get(cpf).getContas().trim().equals("")){
+            throw new IllegalArgumentException("Erro ao exibir contas do cliente: cliente nao tem nenhuma conta.");
+        }
+        return clientes.get(cpf).getContas();
     }
 }

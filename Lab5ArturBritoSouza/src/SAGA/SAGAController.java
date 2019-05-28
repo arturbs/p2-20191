@@ -1,7 +1,7 @@
 package SAGA;
 
 import SAGA.Cliente.ControllerCliente;
-import SAGA.Conta.ControllerConta;
+import SAGA.Conta.IdentificadorConta;
 import SAGA.Fornecedor.ControllerFornecedor;
 import SAGA.ProdutosEDerivados.IdentificadorProdutoECombo;
 
@@ -9,12 +9,11 @@ public class SAGAController {
 
     ControllerCliente clientes;
     ControllerFornecedor fornecedores;
-    ControllerConta contas;
+
 
     public SAGAController() {
         this.clientes = new ControllerCliente();
         this.fornecedores = new ControllerFornecedor();
-        this.contas = new ControllerConta();
     }
     //Cliente
     public String adicionaCliente(String cpf, String nome, String email, String localizacao){
@@ -29,8 +28,8 @@ public class SAGAController {
         return this.clientes.listaClientes();
     }
 
-    public String editaCliente (String cpf, String atributo, String novoValor){
-        return this.clientes.editaCadastro(cpf, atributo, novoValor);
+    public void editaCliente (String cpf, String atributo, String novoValor){
+        this.clientes.editaCadastro(cpf, atributo, novoValor);
     }
 
     public String removeCliente(String cpf){
@@ -96,7 +95,7 @@ public class SAGAController {
 
     //Compras
 
-    public void adicionaCompra(String cpf, String fornecedor, String data, String nome_prod, String desc_prod){
+    public void adicionaCompra(String cpf, String fornecedor, String data, String nomeProd, String descricaoProduto){
 
         util.Validador.validaStringNullEVazia(cpf, "Erro ao cadastrar compra: cpf nao pode ser vazio ou nulo.");
         util.Validador.validaTamanhoString(cpf, 11, 11, "Erro ao cadastrar compra: cpf invalido.");
@@ -109,13 +108,19 @@ public class SAGAController {
         if(!this.fornecedores.getFornecedores().containsKey(fornecedor)){
             throw new IllegalArgumentException("Erro ao cadastrar compra: fornecedor nao existe.");
         }
-        util.Validador.validaStringNullEVazia(nome_prod, "Erro ao cadastrar compra: nome do produto nao pode ser vazio ou nulo.");
-        util.Validador.validaStringNullEVazia(desc_prod, "Erro ao cadastrar compra: descricao do produto nao pode ser vazia ou nula.");
-        IdentificadorProdutoECombo id = new IdentificadorProdutoECombo(nome_prod.toLowerCase(), desc_prod.toLowerCase());
+        util.Validador.validaStringNullEVazia(nomeProd, "Erro ao cadastrar compra: nome do produto nao pode ser vazio ou nulo.");
+        util.Validador.validaStringNullEVazia(descricaoProduto, "Erro ao cadastrar compra: descricao do produto nao pode ser vazia ou nula.");
+        IdentificadorProdutoECombo id = new IdentificadorProdutoECombo(nomeProd.toLowerCase(), descricaoProduto.toLowerCase());
         if (!this.fornecedores.getListaDeProdutos(fornecedor).containsKey(id)){
             throw new IllegalArgumentException("Erro ao cadastrar compra: produto nao existe.");
         }
 
+        IdentificadorProdutoECombo ide = new IdentificadorProdutoECombo(nomeProd.toLowerCase(), descricaoProduto.toLowerCase());
+        double preco = fornecedores.getPreco(fornecedor ,ide);
+
+        String nomeCliente = clientes.getNomeCliente(cpf);
+
+        this.clientes.cadastraCompra(cpf, fornecedor, data, nomeProd, descricaoProduto, preco, nomeCliente );
 
     }
 
@@ -131,7 +136,7 @@ public class SAGAController {
         if(!this.fornecedores.getFornecedores().containsKey(fornecedor)){
             throw new IllegalArgumentException("Erro ao recuperar debito: fornecedor nao existe.");
         }
-        return 0;
+        return clientes.getValorDebito(cpf, fornecedor);
     }
 
     public String exibeContas(String cpf, String fornecedor) {
@@ -154,6 +159,13 @@ public class SAGAController {
             throw new IllegalArgumentException("Erro ao exibir contas do cliente: cliente nao existe.");
         }
         return "o";
+    }
+
+    public void pagamento(String cpf, String fornecedor){
+
+        IdentificadorConta id = new IdentificadorConta(cpf.toLowerCase(), fornecedor.toLowerCase());
+
+
     }
 
 }

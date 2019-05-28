@@ -38,6 +38,8 @@ public class Fornecedor implements Comparable<Fornecedor>{
     private HashMap <IdentificadorProdutoECombo, ProdutoDoFornecedorAbstract> listaDeProdutos;
 
 
+
+
     /**
      * Constroi um Fornecedor
      *

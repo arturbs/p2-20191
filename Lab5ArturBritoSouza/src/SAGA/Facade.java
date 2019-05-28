@@ -18,7 +18,7 @@ public class Facade {
 		args = new String[] { "SAGA.Facade", "acceptance_test/use_case_1.txt",
 				"acceptance_test/use_case_2.txt", "acceptance_test/use_case_3.txt", "acceptance_test/use_case_4.txt",
 				"acceptance_test/use_case_5.txt", "acceptance_test/use_case_6.txt",
-				// "acceptance_test/use_case_7.txt", "acceptance_test/use_case_8.txt",
+				"acceptance_test/use_case_7.txt", "acceptance_test/use_case_8.txt",
 				};
 		EasyAccept.main(args);
 	}
@@ -36,8 +36,8 @@ public class Facade {
 		return this.controladorPrincipal.exibeClientes();
 	}
 	
-	public String editaCliente (String cpf, String atributo, String novoValor){
-		return this.controladorPrincipal.editaCliente(cpf, atributo, novoValor);
+	public void editaCliente (String cpf, String atributo, String novoValor){
+		this.controladorPrincipal.editaCliente(cpf, atributo, novoValor);
 	}
 	
 	public String removeCliente(String cpf){
@@ -118,6 +118,10 @@ public class Facade {
 		return this.controladorPrincipal.exibeContasClientes(cpf);
 	}
 
+	//Pagamento
+	public void realizaPagamento(String cpf, String fornecedor){
+		this.controladorPrincipal.pagamento(cpf, fornecedor);
+	}
 
 
 }

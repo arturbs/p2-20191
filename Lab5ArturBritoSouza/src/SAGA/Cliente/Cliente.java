@@ -1,4 +1,10 @@
 package SAGA.Cliente;
+import SAGA.Conta.Compra;
+import SAGA.Conta.Conta;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -31,6 +37,11 @@ public class Cliente implements Comparable<Cliente> {
     private String localizacao;
 
     /**
+     * Representação da lista de contas do Cliente
+     */
+    private HashMap<String, Conta> contas;
+
+    /**
      * Constroi um Cliente
      *
      * @param cpf Representacao do cpf do Cliente
@@ -52,6 +63,7 @@ public class Cliente implements Comparable<Cliente> {
         this.email = email;
         this.nome = nome;
         this.localizacao = localizacao;
+        this.contas = new HashMap<>();
     }
 
     /**
@@ -131,5 +143,41 @@ public class Cliente implements Comparable<Cliente> {
     @Override
     public int compareTo(Cliente o) {
        return this.nome.compareTo(o.getNome());
+    }
+
+    public void cadastraCompra(String fornecedor,String data, String nomeProduto, String descricaoProduto, double preco, String nomeCliente ){
+        if (!contas.containsKey(fornecedor)){
+            Conta c = new Conta(fornecedor, nomeCliente);
+            contas.put(fornecedor, c);
+        }
+
+        contas.get(fornecedor).cadastraCompra(fornecedor, data, nomeProduto, descricaoProduto, preco);
+
+
+
+    }
+
+    public String getConta(String fornecedor) {
+        if (!contas.containsKey(fornecedor)){
+            throw new IllegalArgumentException("Erro ao exibir conta do cliente: cliente nao tem nenhuma conta com o fornecedor.");
+        }
+        return contas.get(fornecedor).toString();
+    }
+
+    public String getContas(){
+        String saida = "";
+
+        List<Conta> contasList = new ArrayList<>(this.contas.values());
+
+
+        for (Conta conta: contasList) {
+            saida += conta.toString() + " | ";
+        }
+
+        return saida;
+    }
+
+    public double valorDebito(String fornecedor){
+        return contas.get(fornecedor).getDebito();
     }
 }
