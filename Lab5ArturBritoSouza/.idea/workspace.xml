@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37d5275e-4cac-4434-aff3-98c7e7faa076" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../CaixasPersonalizadas/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaixasPersonalizadas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CaixasPersonalizadas/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaixasPersonalizadas/Tests/Caixa/ControllerCaixasTest.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/../CaixasPersonalizadas/Tests/Caixa/ControllerCaixasTest.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaixasPersonalizadas/out/production/CaixasPersonalizadas/META-INF/CaixasPersonalizadas.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaixasPersonalizadas/out/test/CaixasPersonalizadas/Caixa/ControllerCaixasTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CaixasPersonalizadas/out/test/CaixasPersonalizadas/Caixa/ControllerCaixasTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaixasPersonalizadas/src/Caixa/ControllerCaixas.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaixasPersonalizadas/src/Caixa/ControllerCaixas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Diagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Diagram.ucls" beforeDir="false" afterPath="$PROJECT_DIR$/Diagram.ucls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SAGA/Facade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SAGA/Facade.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,7 +26,7 @@
         <entry file="file://$PROJECT_DIR$/src/SAGA/ProdutosEDerivados/ProdutoDoFornecedorAbstract.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-94">
-              <caret line="56" column="54" lean-forward="true" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
+              <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -32,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/src/SAGA/ProdutosEDerivados/Produto.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -71,7 +74,7 @@
         <entry file="file://$PROJECT_DIR$/src/SAGA/Cliente/ControllerCliente.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="98" column="52" lean-forward="true" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
+              <caret line="98" column="52" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#557#558#0" expanded="true" />
@@ -245,7 +248,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Groovy JUnit" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ProjetoLP2-2019.1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CaixasPersonalizadas" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -551,14 +554,14 @@
     <entry file="file://$PROJECT_DIR$/src/SAGA/ProdutosEDerivados/Produto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SAGA/ProdutosEDerivados/ProdutoDoFornecedorAbstract.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-94">
-          <caret line="56" column="54" lean-forward="true" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
+          <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -575,7 +578,7 @@
     <entry file="file://$PROJECT_DIR$/src/SAGA/Cliente/ControllerCliente.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="98" column="52" lean-forward="true" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
+          <caret line="98" column="52" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#557#558#0" expanded="true" />

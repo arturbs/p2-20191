@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c2250f5-7bc7-463d-8894-a3ea0827d856" name="Default Changelist" comment="" />
+    <list default="true" id="5c2250f5-7bc7-463d-8894-a3ea0827d856" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Caixa/ControllerCaixasTest.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Caixa/ControllerCaixasTest.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaixasPersonalizadas/META-INF/CaixasPersonalizadas.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/CaixasPersonalizadas/Caixa/ControllerCaixasTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/CaixasPersonalizadas/Caixa/ControllerCaixasTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Caixa/ControllerCaixas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Caixa/ControllerCaixas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5ArturBritoSouza/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5ArturBritoSouza/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,26 +18,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Caixa/Facade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-153">
+            <state relative-caret-position="51">
               <caret line="3" column="23" selection-start-line="3" selection-end-line="4" />
-              <folding>
-                <element signature="e#92#93#0" expanded="true" />
-                <element signature="e#152#153#0" expanded="true" />
-                <element signature="e#669#670#0" expanded="true" />
-                <element signature="e#688#689#0" expanded="true" />
-                <element signature="e#771#772#0" expanded="true" />
-                <element signature="e#835#836#0" expanded="true" />
-                <element signature="e#1138#1139#0" expanded="true" />
-                <element signature="e#1204#1205#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -37,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tests/Caixa/ControllerCaixasTest.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="41" column="45" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
+            <state relative-caret-position="1122">
+              <caret line="66" column="105" selection-start-line="66" selection-start-column="105" selection-end-line="66" selection-end-column="105" />
               <folding>
                 <element signature="e#15#54#0" expanded="true" />
               </folding>
@@ -49,14 +46,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Caixa/ControllerCaixas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1156">
-              <caret line="127" selection-start-line="127" selection-end-line="127" />
+            <state relative-caret-position="-481">
+              <caret line="62" column="50" selection-start-line="62" selection-start-column="50" selection-end-line="62" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#170#171#0" expanded="true" />
-                <element signature="e#209#210#0" expanded="true" />
-                <element signature="e#1887#1888#0" expanded="true" />
-                <element signature="e#1935#1936#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -65,17 +58,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Caixa/CaixaAbstract.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
+            <state relative-caret-position="816">
               <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
               <folding>
-                <element signature="e#672#673#0" expanded="true" />
-                <element signature="e#718#719#0" expanded="true" />
-                <element signature="e#847#848#0" expanded="true" />
-                <element signature="e#899#900#0" expanded="true" />
-                <element signature="e#1087#1088#0" expanded="true" />
-                <element signature="e#1124#1125#0" expanded="true" />
-                <element signature="e#1158#1159#0" expanded="true" />
-                <element signature="e#1188#1189#0" expanded="true" />
                 <element signature="e#1336#1337#0" expanded="true" />
               </folding>
             </state>
@@ -85,7 +70,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Caixa/CaixaPentagonal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
+            <state relative-caret-position="306">
               <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
             </state>
           </provider>
@@ -94,7 +79,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Caixa/CaixaRetangulo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
+            <state relative-caret-position="391">
               <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
             </state>
           </provider>
@@ -118,6 +103,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -131,8 +119,8 @@
         <option value="$PROJECT_DIR$/src/Caixa/CaixaAbstract.java" />
         <option value="$PROJECT_DIR$/src/Caixa/CaixaCircular.java" />
         <option value="$PROJECT_DIR$/src/Caixa/test.groovy" />
-        <option value="$PROJECT_DIR$/src/Caixa/ControllerCaixas.java" />
         <option value="$PROJECT_DIR$/src/Caixa/Facade.java" />
+        <option value="$PROJECT_DIR$/src/Caixa/ControllerCaixas.java" />
         <option value="$PROJECT_DIR$/Tests/Caixa/ControllerCaixasTest.groovy" />
       </list>
     </option>
@@ -142,6 +130,7 @@
     <option name="width" value="1318" />
     <option name="height" value="403" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -180,8 +169,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -189,9 +178,11 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Groovy JUnit" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -219,7 +210,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ControllerCaixasTest.testModificaPersonalizacao">
+  <component name="RunManager" selected="JUnit.ControllerCaixasTest">
     <configuration name="Facade" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Caixa.Facade" />
       <module name="CaixasPersonalizadas" />
@@ -248,7 +239,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ControllerCaixasTest.testAdicionaCaixa" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ControllerCaixasTest.testExibeCaixasComFormatoEspecifico" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CaixasPersonalizadas" />
       <extension name="coverage">
         <pattern>
@@ -258,13 +249,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="Caixa" />
       <option name="MAIN_CLASS_NAME" value="Caixa.ControllerCaixasTest" />
-      <option name="METHOD_NAME" value="testAdicionaCaixa" />
+      <option name="METHOD_NAME" value="testExibeCaixasComFormatoEspecifico" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ControllerCaixasTest.testModificaPersonalizacao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ControllerCaixasTest.testExibeCaixasComPersonalizacaoEspecifica" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CaixasPersonalizadas" />
       <extension name="coverage">
         <pattern>
@@ -274,13 +265,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="Caixa" />
       <option name="MAIN_CLASS_NAME" value="Caixa.ControllerCaixasTest" />
-      <option name="METHOD_NAME" value="testModificaPersonalizacao" />
+      <option name="METHOD_NAME" value="testExibeCaixasComPersonalizacaoEspecifica" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ControllerCaixasTest.testNumerosDeCaixas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ControllerCaixasTest.testRendimentoTotal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CaixasPersonalizadas" />
       <extension name="coverage">
         <pattern>
@@ -290,7 +281,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="Caixa" />
       <option name="MAIN_CLASS_NAME" value="Caixa.ControllerCaixasTest" />
-      <option name="METHOD_NAME" value="testNumerosDeCaixas" />
+      <option name="METHOD_NAME" value="testRendimentoTotal" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -298,11 +289,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ControllerCaixasTest.testModificaPersonalizacao" />
-        <item itemvalue="JUnit.ControllerCaixasTest.testAdicionaCaixa" />
-        <item itemvalue="JUnit.ControllerCaixasTest.testNumerosDeCaixas" />
         <item itemvalue="JUnit.ControllerCaixasTest" />
+        <item itemvalue="JUnit.ControllerCaixasTest.testExibeCaixasComFormatoEspecifico" />
+        <item itemvalue="JUnit.ControllerCaixasTest.testExibeCaixasComPersonalizacaoEspecifica" />
         <item itemvalue="Application.Facade" />
+        <item itemvalue="JUnit.ControllerCaixasTest.testRendimentoTotal" />
       </list>
     </recent_temporary>
   </component>
@@ -320,52 +311,48 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ControllerCaixasTest_testNumerosDeCaixas - 2019.06.06 at 11h 20m 12s.xml">
-      <configuration name="ControllerCaixasTest.testNumerosDeCaixas" configurationId="JUnit" />
+    <history-entry file="ControllerCaixasTest - 2019.06.06 at 11h 37m 00s.xml">
+      <configuration name="ControllerCaixasTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControllerCaixasTest_testAdicionaCaixa - 2019.06.06 at 11h 20m 25s.xml">
-      <configuration name="ControllerCaixasTest.testAdicionaCaixa" configurationId="JUnit" />
+    <history-entry file="ControllerCaixasTest_testRemoveCaixa - 2019.06.06 at 11h 41m 27s.xml">
+      <configuration name="ControllerCaixasTest.testRemoveCaixa" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControllerCaixasTest_testAdicionaCaixa - 2019.06.06 at 11h 23m 09s.xml">
-      <configuration name="ControllerCaixasTest.testAdicionaCaixa" configurationId="JUnit" />
+    <history-entry file="ControllerCaixasTest_testRendimentoTotal - 2019.06.06 at 11h 43m 56s.xml">
+      <configuration name="ControllerCaixasTest.testRendimentoTotal" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControllerCaixasTest_testAdicionaCaixa - 2019.06.06 at 11h 23m 29s.xml">
-      <configuration name="ControllerCaixasTest.testAdicionaCaixa" configurationId="JUnit" />
+    <history-entry file="ControllerCaixasTest_testRendimentoTotal - 2019.06.06 at 11h 44m 15s.xml">
+      <configuration name="ControllerCaixasTest.testRendimentoTotal" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControllerCaixasTest_testAdicionaCaixa - 2019.06.06 at 11h 25m 36s.xml">
-      <configuration name="ControllerCaixasTest.testAdicionaCaixa" configurationId="JUnit" />
+    <history-entry file="ControllerCaixasTest_testExibeCaixasComFormatoEspecifico - 2019.06.06 at 11h 49m 20s.xml">
+      <configuration name="ControllerCaixasTest.testExibeCaixasComFormatoEspecifico" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControllerCaixasTest_testAdicionaCaixa - 2019.06.06 at 11h 25m 55s.xml">
-      <configuration name="ControllerCaixasTest.testAdicionaCaixa" configurationId="JUnit" />
+    <history-entry file="ControllerCaixasTest_testExibeCaixasComFormatoEspecifico - 2019.06.06 at 11h 50m 23s.xml">
+      <configuration name="ControllerCaixasTest.testExibeCaixasComFormatoEspecifico" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControllerCaixasTest_testAdicionaCaixa - 2019.06.06 at 11h 26m 08s.xml">
-      <configuration name="ControllerCaixasTest.testAdicionaCaixa" configurationId="JUnit" />
+    <history-entry file="ControllerCaixasTest_testExibeCaixasComPersonalizacaoEspecifica - 2019.06.06 at 11h 50m 36s.xml">
+      <configuration name="ControllerCaixasTest.testExibeCaixasComPersonalizacaoEspecifica" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControllerCaixasTest_testModificaPersonalizacao - 2019.06.06 at 11h 27m 09s.xml">
-      <configuration name="ControllerCaixasTest.testModificaPersonalizacao" configurationId="JUnit" />
+    <history-entry file="ControllerCaixasTest_testExibeCaixasComPersonalizacaoEspecifica - 2019.06.06 at 11h 50m 53s.xml">
+      <configuration name="ControllerCaixasTest.testExibeCaixasComPersonalizacaoEspecifica" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControllerCaixasTest_testModificaPersonalizacao - 2019.06.06 at 11h 28m 11s.xml">
-      <configuration name="ControllerCaixasTest.testModificaPersonalizacao" configurationId="JUnit" />
+    <history-entry file="ControllerCaixasTest_testExibeCaixasComFormatoEspecifico - 2019.06.06 at 11h 53m 41s.xml">
+      <configuration name="ControllerCaixasTest.testExibeCaixasComFormatoEspecifico" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControllerCaixasTest_testModificaPersonalizacao - 2019.06.06 at 11h 28m 42s.xml">
-      <configuration name="ControllerCaixasTest.testModificaPersonalizacao" configurationId="JUnit" />
+    <history-entry file="ControllerCaixasTest - 2019.06.06 at 11h 53m 51s.xml">
+      <configuration name="ControllerCaixasTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1319" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24861" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25655282" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.32872504" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30721965" />
@@ -373,14 +360,18 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32872504" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
     <layout-to-restore>
       <window_info id="Image Layers" order="0" />
@@ -418,17 +409,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Caixa/CaixaRetangulo.java">
+    <entry file="file://$PROJECT_DIR$/src/Caixa/test.groovy" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+        <state relative-caret-position="142">
+          <caret line="1256" selection-start-line="1256" selection-end-line="1256" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Caixa/CaixaAbstract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
+          <folding>
+            <element signature="e#1336#1337#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Caixa/CaixaPentagonal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
+        <state relative-caret-position="306">
           <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Caixa/CaixaRetangulo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -439,73 +448,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Caixa/test.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="1256" selection-start-line="1256" selection-end-line="1256" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Caixa/CaixaAbstract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
-          <folding>
-            <element signature="e#672#673#0" expanded="true" />
-            <element signature="e#718#719#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
-            <element signature="e#899#900#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1124#1125#0" expanded="true" />
-            <element signature="e#1158#1159#0" expanded="true" />
-            <element signature="e#1188#1189#0" expanded="true" />
-            <element signature="e#1336#1337#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Caixa/ControllerCaixas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="127" selection-start-line="127" selection-end-line="127" />
+        <state relative-caret-position="-481">
+          <caret line="62" column="50" selection-start-line="62" selection-start-column="50" selection-end-line="62" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#170#171#0" expanded="true" />
-            <element signature="e#209#210#0" expanded="true" />
-            <element signature="e#1887#1888#0" expanded="true" />
-            <element signature="e#1935#1936#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Caixa/Facade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
+        <state relative-caret-position="51">
           <caret line="3" column="23" selection-start-line="3" selection-end-line="4" />
-          <folding>
-            <element signature="e#92#93#0" expanded="true" />
-            <element signature="e#152#153#0" expanded="true" />
-            <element signature="e#669#670#0" expanded="true" />
-            <element signature="e#688#689#0" expanded="true" />
-            <element signature="e#771#772#0" expanded="true" />
-            <element signature="e#835#836#0" expanded="true" />
-            <element signature="e#1138#1139#0" expanded="true" />
-            <element signature="e#1204#1205#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/Caixa/ControllerCaixasTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="41" column="45" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
+        <state relative-caret-position="1122">
+          <caret line="66" column="105" selection-start-line="66" selection-start-column="105" selection-end-line="66" selection-end-column="105" />
           <folding>
             <element signature="e#15#54#0" expanded="true" />
           </folding>

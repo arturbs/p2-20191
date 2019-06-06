@@ -60,12 +60,14 @@ public class ControllerCaixas {
 
     public void modificaPersonalizacao(String descricao, String novaPersonalizacao){
         Validador.ValidaStringNullEVazia(novaPersonalizacao, "");
+        Validador.ValidaStringNullEVazia(descricao, "");
+
 
         this.estoqueCaixas.get(descricao).setPersonalizacao(novaPersonalizacao);
     }
 
     public void removeCaixa (String descricao){
-        Validador.ValidaStringNullEVazia(descricao, "");
+        Validador.ValidaStringNullEVazia(descricao, "Descricao invalida");
 
         this.estoqueCaixas.remove(descricao);
     }
@@ -75,6 +77,10 @@ public class ControllerCaixas {
     }
 
     public String exibeCaixaEspecifica(String personalizacao, String formato){
+        Validador.ValidaStringNullEVazia(personalizacao, "personalizacao invalida");
+        Validador.ValidaStringNullEVazia(formato, "formato invalida");
+
+
         String saida = "";
 
         List<CaixaAbstract> CaixaList = new ArrayList<>(estoqueCaixas.values());
@@ -88,6 +94,8 @@ public class ControllerCaixas {
     }
 
     public String exibeCaixasComPersonalizacaoEspecifica (String personalizacao){
+        Validador.ValidaStringNullEVazia(personalizacao, "personalizacao invalida");
+
         String saida = "";
 
         List<CaixaAbstract> CaixaList = new ArrayList<>(estoqueCaixas.values());
@@ -101,6 +109,8 @@ public class ControllerCaixas {
     }
 
     public String exibeCaixasComFormatoEspecifico (String formato){
+        Validador.ValidaStringNullEVazia(formato, "formato invalida");
+
         String saida = "";
 
         List<CaixaAbstract> CaixaList = new ArrayList<>(estoqueCaixas.values());

@@ -4,7 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ControllerCaixasTest  {
 
@@ -40,34 +39,52 @@ class ControllerCaixasTest  {
     void testModificaPersonalizacao() {
         novoControler.modificaPersonalizacao("oi", "pintura a mao");
         assertEquals("Caixa com pintura a mao custa R\$ 7.0. Formato Retangular", novoControler.exibeCaixaEspecifica("pintura a mao", "Retangular"))
+        assertThrows(IllegalArgumentException.class, { -> novoControler.modificaPersonalizacao("", "") });
+        assertThrows(IllegalArgumentException.class, { -> novoControler.modificaPersonalizacao("oi", "") });
+        assertThrows(IllegalArgumentException.class, { -> novoControler.modificaPersonalizacao("", "pintura a mao") });
+
+
     }
 
     @Test
     void testRemoveCaixa() {
         novoControler.removeCaixa("oi");
-        assertEquals(4, novoControler.numerosDeCaixas());
+        assertEquals(3, novoControler.numerosDeCaixas());
+        assertThrows(IllegalArgumentException.class, { -> novoControler.removeCaixa("") });
     }
 
     @Test
     void testNumerosDeCaixas() {
-        novoControler.numerosDeCaixas();
         assertEquals(4, novoControler.numerosDeCaixas());
 
     }
 
     @Test
     void testExibeCaixaEspecifica() {
+        assertEquals("Caixa com Colagem custa R\$ 9.0. Formato Retangular", novoControler.exibeCaixaEspecifica("Colagem", "Retangular"))
+        assertThrows(IllegalArgumentException.class, { -> novoControler.exibeCaixaEspecifica("", "") });
+        assertThrows(IllegalArgumentException.class, { -> novoControler.exibeCaixaEspecifica("", "Retangular") });
+        assertThrows(IllegalArgumentException.class, { -> novoControler.exibeCaixaEspecifica("Colagem", "") });
+
     }
 
     @Test
     void testExibeCaixasComPersonalizacaoEspecifica() {
+        assertEquals("Caixa com Colagem custa R\$ 9.0. Formato Retangular | Caixa com Colagem custa R\$ 31.400000000000002. Formato Circular", novoControler.exibeCaixasComPersonalizacaoEspecifica("Colagem"))
+        assertThrows(IllegalArgumentException.class, { -> novoControler.exibeCaixasComPersonalizacaoEspecifica("") });
+
     }
 
     @Test
     void testExibeCaixasComFormatoEspecifico() {
+        assertEquals("Caixa com Colagem custa R\$ 9.0. Formato Retangular | Caixa com arte em tecido custa R\$ 7.0. Formato Retangular", novoControler.exibeCaixasComFormatoEspecifico("Retangular"))
+        assertThrows(IllegalArgumentException.class, { -> novoControler.exibeCaixasComFormatoEspecifico("") });
+
     }
 
     @Test
     void testRendimentoTotal() {
+        assertEquals(5749.3733426244635, novoControler.rendimentoTotal()
+        )
     }
 }
