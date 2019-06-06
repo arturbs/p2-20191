@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c2250f5-7bc7-463d-8894-a3ea0827d856" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Caixa/ControllerCaixasTest.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Caixa/ControllerCaixasTest.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaixasPersonalizadas/META-INF/CaixasPersonalizadas.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/CaixasPersonalizadas/Caixa/ControllerCaixasTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/CaixasPersonalizadas/Caixa/ControllerCaixasTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Caixa/ControllerCaixas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Caixa/ControllerCaixas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5ArturBritoSouza/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5ArturBritoSouza/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5c2250f5-7bc7-463d-8894-a3ea0827d856" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +26,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tests/Caixa/ControllerCaixasTest.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1122">
+            <state relative-caret-position="79">
               <caret line="66" column="105" selection-start-line="66" selection-start-column="105" selection-end-line="66" selection-end-column="105" />
               <folding>
                 <element signature="e#15#54#0" expanded="true" />
@@ -311,9 +303,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ControllerCaixasTest - 2019.06.06 at 11h 37m 00s.xml">
-      <configuration name="ControllerCaixasTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ControllerCaixasTest_testRemoveCaixa - 2019.06.06 at 11h 41m 27s.xml">
       <configuration name="ControllerCaixasTest.testRemoveCaixa" configurationId="JUnit" />
     </history-entry>
@@ -341,6 +330,9 @@
     <history-entry file="ControllerCaixasTest - 2019.06.06 at 11h 53m 51s.xml">
       <configuration name="ControllerCaixasTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ControllerCaixasTest - 2019.06.06 at 11h 58m 44s.xml">
+      <configuration name="ControllerCaixasTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1319" height="784" extended-state="6" />
@@ -355,7 +347,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30721965" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30721965" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -467,7 +459,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/Caixa/ControllerCaixasTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
+        <state relative-caret-position="79">
           <caret line="66" column="105" selection-start-line="66" selection-start-column="105" selection-end-line="66" selection-end-column="105" />
           <folding>
             <element signature="e#15#54#0" expanded="true" />
