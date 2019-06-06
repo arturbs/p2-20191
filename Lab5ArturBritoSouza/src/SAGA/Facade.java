@@ -7,7 +7,7 @@ import easyaccept.EasyAccept;
 public class Facade {
 	
 
-	SAGAController controladorPrincipal;
+	private SAGAController controladorPrincipal;
 
 	public Facade() {
 		this.controladorPrincipal = new SAGAController();

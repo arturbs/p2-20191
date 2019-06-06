@@ -10,8 +10,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="SAGA.Cliente.ControllerCliente" project="Lab5ArturBritoSouza"
-    file="/Lab5ArturBritoSouza/src/SAGA/ControllerCliente.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="2" language="java" name="SAGA.Cliente.ControllerCliente" project="Lab5ArturBritoSouza" 
+    file="/Lab5ArturBritoSouza/src/SAGA/Cliente/ControllerCliente.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="171" width="261" x="3376" y="3243"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -64,8 +64,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="SAGA.ProdutosEDerivados.IdentificadorProdutoECombo" project="Lab5ArturBritoSouza"
-    file="/Lab5ArturBritoSouza/src/SAGA/IdentificadorProduto.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="8" language="java" name="SAGA.ProdutosEDerivados.IdentificadorProdutoECombo" project="Lab5ArturBritoSouza" 
+    file="/Lab5ArturBritoSouza/src/SAGA/ProdutosEDerivados/IdentificadorProdutoECombo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="153" width="189" x="3783" y="3971"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -82,8 +83,10 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="SAGA.ProdutosEDerivados.ProdutoDoFornecedorAbstract" project="Lab5ArturBritoSouza"
-    file="/Lab5ArturBritoSouza/src/SAGA/ProdutoDoFornecedor.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="10" language="java" name="SAGA.ProdutosEDerivados.ProdutoDoFornecedorAbstract" 
+    project="Lab5ArturBritoSouza" 
+    file="/Lab5ArturBritoSouza/src/SAGA/ProdutosEDerivados/ProdutoDoFornecedorAbstract.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="243" width="234" x="4012" y="3971"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -91,8 +94,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="SAGA.Cliente.Cliente" project="Lab5ArturBritoSouza"
-    file="/Lab5ArturBritoSouza/src/SAGA/Cliente.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="11" language="java" name="SAGA.Cliente.Cliente" project="Lab5ArturBritoSouza" 
+    file="/Lab5ArturBritoSouza/src/SAGA/Cliente/Cliente.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="279" width="187" x="3187" y="3598"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -100,8 +103,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="SAGA.Fornecedor.ControllerFornecedor" project="Lab5ArturBritoSouza"
-    file="/Lab5ArturBritoSouza/src/SAGA/ControllerFornecedor.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="12" language="java" name="SAGA.Fornecedor.ControllerFornecedor" project="Lab5ArturBritoSouza" 
+    file="/Lab5ArturBritoSouza/src/SAGA/Fornecedor/ControllerFornecedor.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="279" width="280" x="3677" y="3243"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -118,8 +121,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="SAGA.Fornecedor.Fornecedor" project="Lab5ArturBritoSouza"
-    file="/Lab5ArturBritoSouza/src/SAGA/Fornecedor.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="14" language="java" name="SAGA.Fornecedor.Fornecedor" project="Lab5ArturBritoSouza" 
+    file="/Lab5ArturBritoSouza/src/SAGA/Fornecedor/Fornecedor.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="333" width="249" x="3997" y="3598"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -127,112 +130,199 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="15">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="16" name="fornecedorTeste2"/>      
-      <multiplicity id="17" minimum="0" maximum="1"/>    
+  <class id="15" language="java" name="SAGA.ProdutosEDerivados.Combo" project="Lab5ArturBritoSouza" 
+    file="/Lab5ArturBritoSouza/src/SAGA/ProdutosEDerivados/Combo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="381" x="92" y="-48"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="SAGA.SAGAController" project="Lab5ArturBritoSouza" 
+    file="/Lab5ArturBritoSouza/src/SAGA/SAGAController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="495" width="286" x="513" y="-48"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="SAGA.Conta.Compra" project="Lab5ArturBritoSouza" 
+    file="/Lab5ArturBritoSouza/src/SAGA/Conta/Compra.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="196" x="1085" y="487"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="SAGA.Conta.Conta" project="Lab5ArturBritoSouza" 
+    file="/Lab5ArturBritoSouza/src/SAGA/Conta/Conta.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="293" x="1085" y="-48"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="SAGA.Conta.IdentificadorConta" project="Lab5ArturBritoSouza" 
+    file="/Lab5ArturBritoSouza/src/SAGA/Conta/IdentificadorConta.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="180" x="403" y="487"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="util.Validador" project="Lab5ArturBritoSouza" 
+    file="/Lab5ArturBritoSouza/src/util/Validador.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="243" x="623" y="487"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="SAGA.ProdutosEDerivados.Produto" project="Lab5ArturBritoSouza" 
+    file="/Lab5ArturBritoSouza/src/SAGA/ProdutosEDerivados/Produto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="206" x="839" y="-48"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="22">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="23" name="fornecedores">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="24" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="14" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="18">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="19" name="clienteTeste1"/>      
-      <multiplicity id="20" minimum="0" maximum="1"/>    
+  <dependency id="25">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <association id="26">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="27" name="clientes">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="28" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="21">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="22" name="fornecedorTeste3"/>      
-      <multiplicity id="23" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="24">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="25" name="clienteTeste2"/>      
-      <multiplicity id="26" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="27">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="28" name="listaDeProdutos"/>      
-      <multiplicity id="29" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="30">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="31" name="clientes"/>      
-      <multiplicity id="32" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="33">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="34" name="fornecedorTeste1"/>      
-      <multiplicity id="35" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="36">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="37" name="fornecedores"/>      
-      <multiplicity id="38" minimum="0" maximum="1"/>    
+  <dependency id="29">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="30">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="31">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <generalization id="32">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <dependency id="33">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <association id="34">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="35" name="fornecedores"/>      
+      <multiplicity id="36" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="12" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="39">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="40" name="clienteTeste4"/>      
-      <multiplicity id="41" minimum="0" maximum="1"/>    
+  <dependency id="37">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="38">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="39">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <association id="40">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="41" name="produtos"/>      
+      <multiplicity id="42" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
+    <end type="TARGET" refId="10" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="42">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="43" name="clientes"/>      
-      <multiplicity id="44" minimum="0" maximum="2147483647"/>    
+  <generalization id="43">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <dependency id="44">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <association id="45">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="46" name="listaDeCompras"/>      
+      <multiplicity id="47" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
+    <end type="TARGET" refId="17" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="45">    
+  <association id="48">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="49" name="listaDeProdutos">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="50" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="51">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="52" name="contas"/>      
+      <multiplicity id="53" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="54">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="55" name="controladorPrincipal"/>      
+      <multiplicity id="56" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="57">    
     <end type="SOURCE" refId="14"/>    
     <end type="TARGET" refId="8"/>  
   </dependency>  
-  <association id="46">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="47" name="fornecedorTeste4"/>      
-      <multiplicity id="48" minimum="0" maximum="1"/>    
+  <association id="58">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="59" name="clientes"/>      
+      <multiplicity id="60" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="49">    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="50" name="fornecedores"/>      
-      <multiplicity id="51" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="52">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="53" name="clienteTeste3"/>      
-      <multiplicity id="54" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
+    <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
